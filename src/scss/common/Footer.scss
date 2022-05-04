@@ -1,0 +1,16 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #333;
+  margin-top: 5rem;
+  width: 99.7vw;
+  margin-left: -13%;
+
+  ul li {
+    list-style-type: none;
+    margin: 2rem;
+    cursor: pointer;
+  }
+}

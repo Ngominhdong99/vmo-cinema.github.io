@@ -1,0 +1,15 @@
+.slider-section {
+  margin-top: 5%;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+
+  & > p {
+    color: #ff8a00;
+    font-size: 25px;
+    font-family: "roboto";
+    font-weight: 700;
+    text-transform: uppercase;
+    user-select: none;
+  }
+}

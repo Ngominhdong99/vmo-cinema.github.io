@@ -1,0 +1,896 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "movie_title": "Ant-man 1",
+      "number_of_chap": 1,
+      "img": "/images/action-movies/ant-man1.jpg",
+      "nation": "america",
+      "duration": 110,
+      "year": 2018,
+      "rating": null,
+      "category": "action",
+      "status": "most_rated",
+      "movie_description": "Phim Người kiến 1 là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/6ZfuNTqbHE8",
+      "view": {
+        "week": 877,
+        "month": 4300
+      }
+    },
+    {
+      "id": 2,
+      "movie_title": "The Avengers 3",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/avenger-3.jpg",
+      "nation": "america",
+      "duration": 118,
+      "year": 2019,
+      "rating": null,
+      "category": "action",
+      "status": "most_rated",
+      "movie_description": "Phim Biệt Đội Siêu Anh Hùng là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/6ZfuNTqbHE8",
+      "view": {
+        "week": 877,
+        "month": 4300
+      }
+    },
+    {
+      "id": 3,
+      "movie_title": "The Avengers 4",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/avenger-4.png",
+      "nation": "america",
+      "duration": 119,
+      "year": 2021,
+      "rating": null,
+      "category": "action",
+      "status": "new",
+      "movie_description": "Phim Biệt Đội Siêu Anh Hùng là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/6ZfuNTqbHE8",
+      "view": {
+        "week": 1600,
+        "month": 6000
+      }
+    },
+    {
+      "id": 4,
+      "movie_title": "Black Panther",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/black-panther.jpg",
+      "nation": "america",
+      "duration": 120,
+      "year": 2020,
+      "rating": null,
+      "category": "action",
+      "status": "most_rated",
+      "movie_description": "Phim Black Panther là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/xjDjIWPwcPU",
+      "view": {
+        "week": 800,
+        "month": 4010
+      }
+    },
+    {
+      "id": 5,
+      "movie_title": "Captain Marvel",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/captain-marvel.jpg",
+      "nation": "america",
+      "duration": 121,
+      "year": 2020,
+      "rating": null,
+      "category": "action",
+      "status": "most_rated",
+      "movie_description": "Phim Captain Marvel là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/Z1BCujX3pw8",
+      "view": {
+        "week": 533,
+        "month": 2330
+      }
+    },
+    {
+      "id": 6,
+      "movie_title": "Dr.Strange",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/drStrange-1.jpg",
+      "nation": "america",
+      "duration": 123,
+      "year": 2022,
+      "rating": null,
+      "category": "action",
+      "status": "most_rated",
+      "movie_description": "Phim Dr.strange là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/h7gvFravm4A",
+      "view": {
+        "week": 1050,
+        "month": 5300
+      }
+    },
+    {
+      "id": 7,
+      "movie_title": "Guardian Of The Galaxy",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/gogalaxy-2.jpg",
+      "nation": "america",
+      "duration": 124,
+      "year": 2018,
+      "rating": null,
+      "category": "action",
+      "status": "most_rated",
+      "movie_description": "Phim Guardian Of The Galaxy là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/mhc3CinJHYY",
+      "view": {
+        "week": 768,
+        "month": 2789
+      }
+    },
+    {
+      "id": 8,
+      "movie_title": "Moon Knight",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/moon-knight.png",
+      "nation": "america",
+      "duration": 125,
+      "year": 2022,
+      "rating": null,
+      "category": "action",
+      "status": "on_air",
+      "movie_description": "Phim Moon Kinght là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/x7Krla_UxRg",
+      "view": {
+        "week": 2311,
+        "month": 7654
+      }
+    },
+    {
+      "id": 9,
+      "movie_title": "Spider Man (Homecoming)",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/sipder-man-homecoming.jpg",
+      "nation": "america",
+      "duration": 126,
+      "year": 2021,
+      "rating": null,
+      "category": "action",
+      "status": "on_air",
+      "movie_description": "Phim Spider man là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/O6E_45lsxBE",
+      "view": {
+        "week": 1123,
+        "month": 4333
+      }
+    },
+    {
+      "id": 10,
+      "movie_title": "Thor 3",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/action-movies/thor-3.jpg",
+      "nation": "america",
+      "duration": 127,
+      "year": 2022,
+      "rating": null,
+      "category": "action",
+      "status": "new",
+      "movie_description": "Phim Thor 3 là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/ue80QwXMRHg",
+      "view": {
+        "week": 567,
+        "month": 2346
+      }
+    },
+    {
+      "id": 11,
+      "movie_title": "Attack on Titan",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/attackOnTitan.jpg",
+      "nation": "japan",
+      "duration": 128,
+      "year": 2018,
+      "rating": null,
+      "category": "action, anime",
+      "status": "most_rated",
+      "movie_description": "Phim Attack on Titan là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/ZefrVAetxVI",
+      "view": {
+        "week": 1457,
+        "month": 6547
+      }
+    },
+    {
+      "id": 12,
+      "movie_title": "Detective Conan",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/conan.jpg",
+      "nation": "japan",
+      "duration": 129,
+      "year": 2002,
+      "rating": null,
+      "category": "investigate, anime",
+      "status": "most_rated",
+      "movie_description": "Phim Detective Conan là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/8ApVMsQJ3fE",
+      "view": {
+        "week": 453,
+        "month": 1587
+      }
+    },
+    {
+      "id": 13,
+      "movie_title": "Doraemon",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/doraemon.jpg",
+      "nation": "japan",
+      "duration": 130,
+      "year": 2002,
+      "rating": null,
+      "category": "anime",
+      "status": "most_rated",
+      "movie_description": "Phim chú mèo máy Đô rê mon là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/gUDVVodgXDQ",
+      "view": {
+        "week": 342,
+        "month": 1455
+      }
+    },
+    {
+      "id": 14,
+      "movie_title": "Gintama",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/gintama.jpg",
+      "nation": "japan",
+      "duration": 131,
+      "year": 2002,
+      "rating": null,
+      "category": "comedy, anime",
+      "status": "most_rated",
+      "movie_description": "Phim Gintama là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/FXxrmCL1O4A",
+      "view": {
+        "week": 566,
+        "month": 1645
+      }
+    },
+    {
+      "id": 15,
+      "movie_title": "Kimetsu No Yaiba",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/kimetsu.jpg",
+      "nation": "japan",
+      "duration": 131,
+      "year": 2022,
+      "rating": null,
+      "category": "action, anime",
+      "status": "new",
+      "movie_description": "Phim Lưỡi gươm diệt quỷ là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/cC2J_d3xz5c",
+      "view": {
+        "week": 2765,
+        "month": 7563
+      }
+    },
+    {
+      "id": 16,
+      "movie_title": "Konosuba",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/konosuba.jpg",
+      "nation": "japan",
+      "duration": 132,
+      "year": 2020,
+      "rating": null,
+      "category": "comedy, anime",
+      "status": "new",
+      "movie_description": "Phim Konosuba là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/Tj4MmrTR0_8",
+      "view": {
+        "week": 324,
+        "month": 1233
+      }
+    },
+    {
+      "id": 17,
+      "movie_title": "Kungfu Panda",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/kungfu-panda.jpg",
+      "nation": "america",
+      "duration": 133,
+      "year": 2018,
+      "rating": null,
+      "category": "comedy",
+      "status": "most_rated",
+      "movie_description": "Phim Kungfu gấu trúc là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/1ns0Osj9bHg",
+      "view": {
+        "week": 127,
+        "month": 344
+      }
+    },
+    {
+      "id": 18,
+      "movie_title": "Naruto",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/naruto.jpg",
+      "nation": "japan",
+      "duration": 135,
+      "year": 2022,
+      "rating": null,
+      "category": "action, anime",
+      "status": "on_air",
+      "movie_description": "Phim Naruto là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/-SBBef-OEiE",
+      "view": {
+        "week": 333,
+        "month": 546
+      }
+    },
+    {
+      "id": 19,
+      "movie_title": "Tokyo Ghoul",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/tokyo-ghoul.jpg",
+      "nation": "japan",
+      "duration": 136,
+      "year": 2022,
+      "rating": null,
+      "category": "action, anime",
+      "status": "most_rated",
+      "movie_description": "Phim Ngạ quỷ Tokyo là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/rVed44_uz8s",
+      "view": {
+        "week": 435,
+        "month": 1452
+      }
+    },
+    {
+      "id": 20,
+      "movie_title": "Turning Red",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/anime/turning-red.jpg",
+      "nation": "america",
+      "duration": 138,
+      "year": 2022,
+      "rating": null,
+      "category": "comedy",
+      "status": "on_air",
+      "movie_description": "Phim Gấu đỏ là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/XdKzUbAiswE",
+      "view": {
+        "week": 545,
+        "month": 1453
+      }
+    },
+    {
+      "id": 21,
+      "movie_title": "Chunky",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/chunky.jpg",
+      "nation": "america",
+      "duration": 139,
+      "year": 2018,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Búp bê ma Chunky là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/Ft2dqYwkRiE",
+      "view": {
+        "week": 121,
+        "month": 233
+      }
+    },
+    {
+      "id": 22,
+      "movie_title": "The Conjuring",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/conjuring.jpg",
+      "nation": "america",
+      "duration": 140,
+      "year": 2018,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Quỷ Ám là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/k10ETZ41q5o",
+      "view": {
+        "week": 323,
+        "month": 967
+      }
+    },
+    {
+      "id": 23,
+      "movie_title": "Cursed",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/cursed.jpg",
+      "nation": "america",
+      "duration": 142,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Lời Nguyền là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/xLTdy6PfotA",
+      "view": {
+        "week": 89,
+        "month": 342
+      }
+    },
+    {
+      "id": 24,
+      "movie_title": "Girl From Nowhere",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/girl-from-nowhere.jpg",
+      "nation": "Thailand",
+      "duration": 143,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "new",
+      "movie_description": "Phim Cô gái tới từ hư vô là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/Xu63tr_B39g",
+      "view": {
+        "week": 45,
+        "month": 233
+      }
+    },
+    {
+      "id": 25,
+      "movie_title": "Resident Evil",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/resident-evil.jpg",
+      "nation": "america",
+      "duration": 142,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "on_air",
+      "movie_description": "Phim Vùng đất quỷ dữ là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/cOv3Hk-6kt8",
+      "view": {
+        "week": 564,
+        "month": 2341
+      }
+    },
+    {
+      "id": 26,
+      "movie_title": "The Nun",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/the-nun.jpg",
+      "nation": "america",
+      "duration": 143,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Ác quỷ ma sơ là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/pzD9zGcUNrw",
+      "view": {
+        "week": 233,
+        "month": 676
+      }
+    },
+    {
+      "id": 27,
+      "movie_title": "The Walking Dead 1",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/the-walking-dead-1.jpg",
+      "nation": "america",
+      "duration": 144,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Xác sống là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/sfAc2U20uyg",
+      "view": {
+        "week": 15,
+        "month": 155
+      }
+    },
+    {
+      "id": 28,
+      "movie_title": "The Walking Dead 2",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/the-walking-dead-2.jpg",
+      "nation": "america",
+      "duration": 145,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Xác sống là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/sfAc2U20uyg",
+      "view": {
+        "week": 23,
+        "month": 234
+      }
+    },
+    {
+      "id": 29,
+      "movie_title": "The Walking Dead 3",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/the-walking-dead-3.jpg",
+      "nation": "america",
+      "duration": 145,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Xác sống là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/sfAc2U20uyg",
+      "view": {
+        "week": 33,
+        "month": 125
+      }
+    },
+    {
+      "id": 30,
+      "movie_title": "The Walking Dead 4",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/the-walking-dead-4.jpg",
+      "nation": "america",
+      "duration": 146,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Xác sống là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/sfAc2U20uyg",
+      "view": {
+        "week": 31,
+        "month": 112
+      }
+    },
+    {
+      "id": 31,
+      "movie_title": "The Walking Dead 5",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/the-walking-dead-5.jpg",
+      "nation": "america",
+      "duration": 147,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "new",
+      "movie_description": "Phim Xác sống là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/sfAc2U20uyg",
+      "view": {
+        "week": 45,
+        "month": 78
+      }
+    },
+    {
+      "id": 32,
+      "movie_title": "Wrong Turn",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/horror/wrong-turn.jpg",
+      "nation": "america",
+      "duration": 148,
+      "year": 2022,
+      "rating": null,
+      "category": "horror",
+      "status": "most_rated",
+      "movie_description": "Phim Ngã rẽ tử thần là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/ccaNMcPqpQ0",
+      "view": {
+        "week": 12,
+        "month": 111
+      }
+    },
+    {
+      "id": 33,
+      "movie_title": "Boy Over Flower",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/boy-over-flower.jpg",
+      "nation": "Korea",
+      "duration": 149,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic",
+      "status": "most_rated",
+      "movie_description": "Phim Vườn sao băng là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/iuqwMI6dpJA",
+      "view": {
+        "week": 8,
+        "month": 23
+      }
+    },
+    {
+      "id": 34,
+      "movie_title": "Bussiness Proposal",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/bussiness-pro.jpg",
+      "nation": "korea",
+      "duration": 150,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic",
+      "status": "on_air",
+      "movie_description": "Phim Hẹn hò chốn công sở là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/M-PHcxPyasA",
+      "view": {
+        "week": 1256,
+        "month": 5100
+      }
+    },
+    {
+      "id": 35,
+      "movie_title": "Descendants of The Sun",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/descendants-of-the-sun.jpg",
+      "nation": "korea",
+      "duration": 148,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic",
+      "status": "most_rated",
+      "movie_description": "Phim Hậu duệ mặt trời là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/3Fyrt0qByOQ",
+      "view": {
+        "week": 23,
+        "month": 66
+      }
+    },
+    {
+      "id": 36,
+      "movie_title": "Fore Casting Love",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/foreCasting-love.jpg",
+      "nation": "korea",
+      "duration": 152,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic",
+      "status": "most_rated",
+      "movie_description": "Phim có hẹn với thanh xuân là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/B--OvWV3HFw",
+      "view": {
+        "week": 45,
+        "month": 124
+      }
+    },
+    {
+      "id": 37,
+      "movie_title": "Our Summer",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/our-summer.jpg",
+      "nation": "korea",
+      "duration": 153,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic",
+      "status": "most_rated",
+      "movie_description": "Phim Mùa hè yêu dấu của chúng ta là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/wpW6aVWgvMc",
+      "view": {
+        "week": 33,
+        "month": 124
+      }
+    },
+    {
+      "id": 38,
+      "movie_title": "Pachinko",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/pachinko.jpg",
+      "nation": "korea",
+      "duration": 153,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic",
+      "status": "new",
+      "movie_description": "Phim Pachinko là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/O1r5XXJOYNA",
+      "view": {
+        "week": 899,
+        "month": 4500
+      }
+    },
+    {
+      "id": 39,
+      "movie_title": "Weathering With You",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/weathering-with-you.jpg",
+      "nation": "japan",
+      "duration": 153,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic, anime",
+      "status": "new",
+      "movie_description": "Phim Đứa con của thời tiết là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/Q6iK6DjV_iE",
+      "view": {
+        "week": 34,
+        "month": 500
+      }
+    },
+    {
+      "id": 40,
+      "movie_title": "Your Lie In April",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/your-lie-in-april.jpg",
+      "nation": "japan",
+      "duration": 154,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic, anime",
+      "status": "most_rated",
+      "movie_description": "Phim Tháng tư là lời nói dối của em là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/3aL0gDZtFbE",
+      "view": {
+        "week": 122,
+        "month": 444
+      }
+    },
+    {
+      "id": 41,
+      "movie_title": "Your Name",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/romantic/your-nam.jpg",
+      "nation": "japan",
+      "duration": 154,
+      "year": 2022,
+      "rating": null,
+      "category": "romantic, anime",
+      "status": "most_rated",
+      "movie_description": "Phim Tên cậu là gì của em là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/_mifHzxFNQ4",
+      "view": {
+        "week": 234,
+        "month": 5100
+      }
+    },
+    {
+      "id": 42,
+      "movie_title": "Dr.Strange in the multiverse of madness",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/comming/drStrange2.jpg",
+      "nation": "america",
+      "duration": 154,
+      "year": 2022,
+      "rating": null,
+      "category": "action",
+      "status": "comming_soon",
+      "movie_description": "Phim Dr.Strange in the multiverse of madness là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/aWzlQ2N6qqg",
+      "view": {
+        "week": 2355,
+        "month": 7688
+      }
+    },
+    {
+      "id": 43,
+      "movie_title": "Kimetsu no yaiba 3",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/comming/kny-ss3.jpg",
+      "nation": "japan",
+      "duration": 154,
+      "year": 2022,
+      "rating": null,
+      "category": "anime, action",
+      "status": "comming_soon",
+      "movie_description": "Phim Lưỡi gươm diệt quỷ 3 là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/cC2J_d3xz5c",
+      "view": {
+        "week": 144,
+        "month": 699
+      }
+    },
+    {
+      "id": 44,
+      "movie_title": "Mushou no Sekai",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/comming/mushou-ss3.jpg",
+      "nation": "japan",
+      "duration": 154,
+      "year": 2022,
+      "rating": null,
+      "category": "anime, action",
+      "status": "comming_soon",
+      "movie_description": "Phim Thất nghiệp chuyển sinh là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/1TiBoHQUj3I",
+      "view": {
+        "week": 34,
+        "month": 200
+      }
+    },
+    {
+      "id": 45,
+      "movie_title": "Thor 4",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/comming/thor-4.jpg",
+      "nation": "america",
+      "duration": 154,
+      "year": 2022,
+      "rating": null,
+      "category": "action",
+      "status": "comming_soon",
+      "movie_description": "Phim thần sấm 4 là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/tgB1wUcmbbw",
+      "view": {
+        "week": 55,
+        "month": 344
+      }
+    },
+    {
+      "id": 46,
+      "movie_title": "Fantasic Beasts 3",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/comming/fantasic.jpg",
+      "nation": "america",
+      "duration": 150,
+      "year": 2022,
+      "rating": null,
+      "category": "action",
+      "status": "on_air",
+      "movie_description": "Phim Sinh vật huyền bí là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/wLsjVKRLg0Y",
+      "view": {
+        "week": 89,
+        "month": 344
+      }
+    },
+    {
+      "id": 47,
+      "movie_title": "The Batman",
+      "number_of_chap": 1,
+      "director": "VMO",
+      "img": "/images/comming/batman.jpg",
+      "nation": "america",
+      "duration": 150,
+      "year": 2022,
+      "rating": null,
+      "category": "action",
+      "status": "on_air",
+      "movie_description": "Phim Người dơi là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.",
+      "link": "https://www.youtube.com/embed/mqqft2x_Aa4",
+      "view": {
+        "week": 1355,
+        "month": 5434
+      }
+    }
+  ]
+}

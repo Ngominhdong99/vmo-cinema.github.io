@@ -1,0 +1,74 @@
+.filter-title {
+  & p {
+    color: #ff8a00;
+    font-size: 25px;
+    font-family: "roboto";
+    font-weight: 700;
+    text-transform: uppercase;
+    user-select: none;
+    margin-bottom: 1rem;
+    margin-top: 4%;
+  }
+}
+
+.filter {
+  & select {
+    text-align: center;
+    height: 2rem;
+    width: 10rem;
+    border-radius: 5px;
+  }
+
+  & .btn-filter {
+    height: 2rem;
+    width: 5rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f1f1f1;
+    cursor: pointer;
+    background-color: rgb(67, 67, 245);
+
+    &:hover {
+      background-color: rgb(38, 38, 240);
+    }
+  }
+}
+
+.movie-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #333;
+  justify-content: center;
+  align-items: center;
+
+  .movie-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20%;
+    margin: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      transition: all 0.3s linear;
+      transform: scale(1.1);
+    }
+  }
+  & img {
+    border: 1px solid #f1f1f1;
+    width: auto;
+    height: 23rem;
+    border-radius: 2%;
+  }
+
+  & p {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,56 @@
+.home-movie-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+
+  .home-movie-section {
+    flex-basis: 75%;
+    max-width: 75%;
+    background-color: #333;
+
+    .home-movie-heading {
+      margin-left: 1rem;
+      margin-top: 1rem;
+      color: #ff8a00;
+      font-size: 25px;
+      font-family: "roboto";
+      font-weight: 700;
+      text-transform: uppercase;
+      user-select: none;
+      margin-bottom: 2rem;
+    }
+
+    .home-movie-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .movie-item {
+        margin: 1% 0 3% 0;
+
+        & img {
+          width: 180px;
+          height: 280px;
+          object-fit: cover;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+        & .home-movie-name {
+          margin-top: -1.5%;
+          text-align: center;
+          height: 100%;
+          width: 100%;
+          background-color: #000;
+          user-select: none;
+          color: #f1f1f1;
+        }
+
+        &:hover {
+          transition: all 0.3s linear;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}

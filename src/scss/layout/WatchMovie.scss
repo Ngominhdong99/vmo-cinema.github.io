@@ -1,0 +1,76 @@
+.movie-info-container {
+  background-color: #333;
+
+  .movie-link {
+    padding: 1rem;
+    font-size: 24px;
+    margin-top: 3rem;
+    color: #ff8a00;
+  }
+
+  .movie-describe-container {
+    display: flex;
+    flex-direction: row;
+
+    .movie-describe {
+      display: flex;
+      flex-direction: row;
+      margin-top: 1rem;
+      flex-basis: 70%;
+
+      & img {
+        margin: 0.5rem;
+        width: 180px;
+        height: 280px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .describe {
+        padding: 1rem;
+        margin: 0.5rem;
+        line-height: 1.8rem;
+        font-size: 16px;
+      }
+    }
+    .movie-suggestion {
+      border-left: 5px solid #1a1a1a;
+      flex-basis: 30%;
+      padding: 1rem;
+
+      .suggestion-title {
+        color: #ff8a00;
+        font-size: 18px;
+        font-family: "roboto";
+        font-weight: 500;
+        text-transform: uppercase;
+        user-select: none;
+      }
+
+      .suggest-movie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .suggest-movie-item {
+          margin: 0.5rem;
+          text-align: center;
+
+          &:hover {
+            transform: scale(1.1);
+            transition: all 0.3s linear;
+          }
+        }
+      }
+
+      & img {
+        border: 1px solid #f1f1f1;
+        width: 100px;
+        height: 120px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+  }
+}
