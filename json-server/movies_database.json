@@ -4,11 +4,12 @@
       "id": 1,
       "movie_title": "Ant-man 1",
       "number_of_chap": 1,
+      "director": "VMO",
       "img": "/images/action-movies/ant-man1.jpg",
       "nation": "america",
       "duration": 110,
       "year": 2018,
-      "rating": 4,
+      "rating": 5,
       "category": "action",
       "status": "most_rated",
       "movie_description": "Phim Người kiến 1 là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -103,7 +104,7 @@
       "nation": "america",
       "duration": 123,
       "year": 2022,
-      "rating": null,
+      "rating": 4,
       "category": "action",
       "status": "most_rated",
       "movie_description": "Phim Dr.strange là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -635,7 +636,7 @@
       "nation": "korea",
       "duration": 150,
       "year": 2022,
-      "rating": null,
+      "rating": 5,
       "category": "romantic",
       "status": "on_air",
       "movie_description": "Phim Hẹn hò chốn công sở là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -750,7 +751,7 @@
       "duration": 154,
       "year": 2022,
       "rating": null,
-      "category": "romantic, anime",
+      "category": "romantic",
       "status": "most_rated",
       "movie_description": "Phim Tháng tư là lời nói dối của em là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
       "link": "https://www.youtube.com/embed/3aL0gDZtFbE",
@@ -787,7 +788,7 @@
       "nation": "america",
       "duration": 154,
       "year": 2022,
-      "rating": 5,
+      "rating": 3,
       "category": "action",
       "status": "comming_soon",
       "movie_description": "Phim Dr.Strange in the multiverse of madness là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -891,6 +892,106 @@
         "week": 1355,
         "month": 5434
       }
+    },
+    {
+      "id": 48,
+      "movie_title": "The Adam project",
+      "number_of_chap": "a",
+      "director": "a",
+      "img": "https://www.toponseek.com/blogs/wp-content/uploads/2019/06/toi-uu-hinh-anh-optimize-image-4-1200x900.jpg",
+      "nation": "a",
+      "duration": "a",
+      "rating": 5,
+      "year": "2019",
+      "status": "a",
+      "category": "a",
+      "movie_description": "a",
+      "link": "aaa",
+      "view": {
+        "week": "",
+        "month": ""
+      }
+    },
+    {
+      "id": 49,
+      "movie_title": "a",
+      "number_of_chap": "",
+      "director": "",
+      "img": "",
+      "nation": "",
+      "duration": "",
+      "rating": "",
+      "year": "",
+      "status": "",
+      "category": "",
+      "movie_description": "",
+      "link": "",
+      "view": {
+        "week": "",
+        "month": ""
+      }
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "userName": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "userName": "minhdong",
+      "password": "123",
+      "role": "member",
+      "comment": [
+        {
+          "id": 1,
+          "content": "Phim hay qua"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "userName": "viethung",
+      "password": "123",
+      "role": "member",
+      "comment": [],
+      "id": 3
+    },
+    {
+      "userName": "chaunv",
+      "password": "123",
+      "role": "member",
+      "comment": [],
+      "id": 4
+    },
+    {
+      "userName": "huynq",
+      "password": "123",
+      "role": "member",
+      "comment": [],
+      "id": 5
+    },
+    {
+      "userName": "ngominhdong99",
+      "password": "123",
+      "role": "admin",
+      "comment": [],
+      "id": 6
+    },
+    {
+      "userName": "tranminhhieu",
+      "password": "123",
+      "role": "member",
+      "comment": [],
+      "id": 7
+    },
+    {
+      "userName": "a",
+      "password": "",
+      "role": "",
+      "comment": [],
+      "id": 8
     }
   ]
 }

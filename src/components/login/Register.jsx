@@ -4,6 +4,9 @@ import { BsKey } from "react-icons/bs";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../services/store/action";
+import { BiArrowBack } from "react-icons/bi";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -65,7 +68,7 @@ const FormContainer = styled.form`
 
   .button {
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     height: 2.5rem;
     width: 15rem;
     font-size: 18px;
@@ -98,34 +101,91 @@ const FormContainer = styled.form`
       color: #f1f1f1;
     }
   }
+
+  .icon-back {
+    font-size: 18px;
+    margin-left: -80%;
+    margin-top: 1rem;
+    cursor: pointer;
+    padding: 0.2rem;
+
+    &:hover {
+      background-color: #ff9d2d;
+      color: #000000;
+      border-radius: 5px;
+    }
+  }
 `;
 
 function LoginForm() {
+  const [newAcc, setNewAcc] = React.useState({
+    userName: "",
+    password: "",
+    role: "member",
+    comment: [],
+  });
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    toast.success("Register Success!");
+    dispatch(addUser(newAcc));
+    navigate("/login");
+    setNewAcc({
+      userName: "",
+      password: "",
+    });
+  };
 
   return (
     <FormContainer>
+      <div className="icon-back" onClick={() => navigate("/login")}>
+        <BiArrowBack />
+        <span>Back to login</span>
+      </div>
       <h1>Register</h1>
       <p>Please enter your Username and Password</p>
       <div>
         <AiOutlineUser className="icon" />
-        <input type="text" placeholder="Enter your Username or E-mail" />
+        <input
+          type="text"
+          placeholder="Enter your Username or E-mail"
+          required
+          value={newAcc.userName}
+          onChange={(e) =>
+            setNewAcc({
+              ...newAcc,
+              userName: e.target.value,
+            })
+          }
+        />
       </div>
       <div>
         <BsKey className="icon" />
-        <input type="password" placeholder="Enter your password" />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          value={newAcc.password}
+          required
+          onChange={(e) =>
+            setNewAcc({
+              ...newAcc,
+              password: e.target.value,
+            })
+          }
+        />
       </div>
-      <div>
+      {/* <div>
         <BsKey className="icon" />
         <input type="password" placeholder="Re-enter your password" />
-      </div>
+      </div> */}
 
       <button
         className="button"
+        type="submit"
         onClick={(e) => {
-          e.preventDefault();
-          toast.success("Register Success!");
-          navigate("/login");
+          handleRegister(e);
         }}
       >
         Register

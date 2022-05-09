@@ -1,12 +1,12 @@
 import React from "react";
 import "../../scss/layout/FilterMovie.scss";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import { setSearchData } from "../../services/store/action";
 import { useDispatch } from "react-redux";
 
-function FilterMovie({ searchData }) {
+function FilterMovie({ searchData, datas }) {
   const [inputFilter, setInputFilter] = React.useState({
     category_like: "",
     nation_like: "",
@@ -54,6 +54,8 @@ function FilterMovie({ searchData }) {
           <option>Comedy</option>
           <option>Romantic</option>
           <option>Anime</option>
+          <option>Investigate</option>
+          <option>Horror</option>
         </select>
         <select
           value={inputFilter.nation_like}
@@ -89,7 +91,7 @@ function FilterMovie({ searchData }) {
         </button>
       </div>
       <div className="movie-section">
-        {searchData.map((movie, index) => {
+        {(searchData.length === 0 ? datas : searchData).map((movie, index) => {
           return (
             <div
               className="movie-item"

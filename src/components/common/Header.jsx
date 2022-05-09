@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../../scss/common/Header.scss";
-import { BiSearchAlt2 } from "react-icons/bi";
+import { BiSearchAlt2, BiLogOut } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { setSearchData } from "../../services/store/action";
 import { useDispatch } from "react-redux";
 import queryString from "query-string";
+import { setCurrentUser } from "../../services/store/action";
 
-function Header() {
+function Header({ currentUser }) {
   const [inputSearch, setInputSeach] = useState({
     movie_title_like: "",
     category_like: "",
@@ -223,20 +224,36 @@ function Header() {
           </ul>
         </div>
         <div className="login-btn">
-          <a
-            href="/"
-            onClick={(e) => {
-              navigate("/login");
-              e.preventDefault();
-            }}
-          >
-            Đăng nhập
-          </a>
+          {JSON.parse(localStorage.getItem("user")) ? (
+            <ul>
+              <li>{JSON.parse(localStorage.getItem("user")).userName}</li>
+              <ul className="user">
+                <BiLogOut
+                  onClick={() => {
+                    localStorage.removeItem("user");
+                    dispatch(setCurrentUser(""));
+                  }}
+                />
+              </ul>
+            </ul>
+          ) : (
+            <a
+              href="/"
+              onClick={(e) => {
+                navigate("/login");
+                e.preventDefault();
+              }}
+            >
+              Đăng nhập
+            </a>
+          )}
         </div>
       </div>
       <div className="search-box">
         <div className="search-section">
-          <BiSearchAlt2 className="search-icon" />
+          <div>
+            <BiSearchAlt2 className="search-icon" />
+          </div>
           <input
             type="search"
             placeholder="Search"

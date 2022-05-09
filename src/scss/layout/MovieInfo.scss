@@ -72,6 +72,7 @@
     align-items: center;
 
     h2 {
+      margin-top: 1rem;
       color: #ff8a00;
       margin-bottom: 2rem;
     }
@@ -86,6 +87,8 @@
         padding-bottom: 1rem;
 
         .movie-info {
+          margin-left: 1rem;
+          margin-right: 1rem;
           display: flex;
           flex-direction: column;
           justify-content: space-between;

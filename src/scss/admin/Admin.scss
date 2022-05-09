@@ -1,0 +1,74 @@
+.admin-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 -11.5% 0 -11.7%;
+
+  .admin-menu {
+    flex-basis: 20%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    & .btn {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      & button {
+        margin-top: 1rem;
+        height: 3rem;
+        background-color: #6060bd;
+        color: #f1f1f1;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+
+        &:hover {
+          transition: all 0.5s linear;
+          background-color: #2929bb;
+        }
+      }
+    }
+
+    & .icon {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        transition: all 0.3s linear;
+        transform: scale(1.1);
+        color: #000000;
+      }
+    }
+  }
+
+  .admin-section {
+    max-width: 80%;
+    flex-basis: 80%;
+    background-color: rgb(210, 214, 230);
+    color: #333;
+    margin-left: 1rem;
+
+    .table {
+      height: 90%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+
+      & thead tr th,
+      tbody tr td {
+        word-wrap: break-word; /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word; /* Renamed property in CSS3 draft spec */
+        width: 100%;
+        border: 1px solid black;
+        text-align: center;
+      }
+    }
+  }
+}

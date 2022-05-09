@@ -9,6 +9,7 @@ function StarRating({ id, currentData }) {
   const [hover, setHover] = useState(null);
   const dispatch = useDispatch();
 
+  console.log(currentData);
   React.useEffect(() => {
     currentData.rating = rate;
   }, [rate]);

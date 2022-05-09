@@ -5,6 +5,9 @@ import { FcGoogle } from "react-icons/fc";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import getInformation from "../../Firebase/Firebase";
+import { useDispatch } from "react-redux";
+import { getUser, setCurrentUser } from "../../services/store/action";
 
 const FormContainer = styled.form`
   display: flex;
@@ -99,9 +102,43 @@ const FormContainer = styled.form`
   }
 `;
 
-function LoginForm() {
+function LoginForm({ users }) {
+  const [inputValue, setInputValue] = React.useState({
+    userName: "",
+    password: "",
+  });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const handleLoginAcc = () => {
+    users.map((user) => {
+      if (
+        user.userName === inputValue.userName.trim() &&
+        user.password === inputValue.password.trim() &&
+        user.role !== "admin"
+      ) {
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/home-movie");
+        dispatch(setCurrentUser(user));
+      }
+      if (
+        user.userName === inputValue.userName.trim() &&
+        user.password === inputValue.password.trim() &&
+        user.role === "admin"
+      ) {
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/admin");
+        dispatch(setCurrentUser(user));
+      }
+    });
+  };
+
+  const loginWithGoogle = async (e) => {
+    e.preventDefault();
+    await getInformation();
+    navigate("/home-movie");
+    dispatch(setCurrentUser(JSON.parse(localStorage.getItem("user"))));
+  };
   return (
     <FormContainer>
       <ToastContainer position="top-right" />
@@ -110,11 +147,31 @@ function LoginForm() {
       <p>Please enter your Username and Password</p>
       <div>
         <AiOutlineUser className="icon" />
-        <input type="text" placeholder="Enter your Username or E-mail" />
+        <input
+          required
+          type="text"
+          placeholder="Enter your Username or E-mail"
+          onChange={(e) =>
+            setInputValue({
+              ...inputValue,
+              userName: e.target.value,
+            })
+          }
+        />
       </div>
       <div>
         <BsKey className="icon" />
-        <input type="password" placeholder="Enter your password" />
+        <input
+          required
+          type="password"
+          placeholder="Enter your password"
+          onChange={(e) =>
+            setInputValue({
+              ...inputValue,
+              password: e.target.value,
+            })
+          }
+        />
       </div>
       <div>
         <i>
@@ -130,20 +187,17 @@ function LoginForm() {
       </div>
       <button
         className="button"
-        onClick={() => {
-          navigate("/home-movie");
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch(getUser());
+          handleLoginAcc();
         }}
       >
         Login
       </button>
       <div id="sign-with-google">
         <FcGoogle className="icon" />
-        <a
-          href="/"
-          onClick={(e) => {
-            e.preventDefault();
-          }}
-        >
+        <a href="/" onClick={(e) => loginWithGoogle(e)}>
           Or sign-in with Google
         </a>
       </div>
