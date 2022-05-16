@@ -1,6 +1,23 @@
 import React from "react";
+import { deleteUser, getUser, setUser } from "../../services/store/action";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function ListUser({ users }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleEditUser = (user) => {
+    dispatch(setUser(user));
+    navigate("/admin/users");
+  };
+  const handleDeleteUser = (id) => {
+    dispatch(deleteUser(id));
+  };
+
+  React.useEffect(() => {
+    dispatch(getUser());
+  }, [handleDeleteUser]);
   return (
     <>
       <table className="table">
@@ -11,7 +28,6 @@ function ListUser({ users }) {
             <th scope="col">Name</th>
             <th scope="col">Password</th>
             <th scope="col">Role</th>
-            <th scope="col">Comment</th>
             <th scope="col">Option</th>
           </tr>
         </thead>
@@ -23,10 +39,11 @@ function ListUser({ users }) {
               <td>{user.userName}</td>
               <td>{user.password}</td>
               <td>{user.role}</td>
-              <td>[Object]</td>
               <td>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => handleEditUser(user)}>Edit</button>
+                <button onClick={() => handleDeleteUser(user.id)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

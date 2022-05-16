@@ -4,6 +4,7 @@
       "id": 1,
       "movie_title": "Ant-man 1",
       "number_of_chap": 1,
+      "director": "VMO",
       "img": "/images/action-movies/ant-man1.jpg",
       "nation": "america",
       "duration": 110,
@@ -27,7 +28,7 @@
       "nation": "america",
       "duration": 118,
       "year": 2019,
-      "rating": null,
+      "rating": 4,
       "category": "action",
       "status": "most_rated",
       "movie_description": "Phim Biệt Đội Siêu Anh Hùng là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -103,7 +104,7 @@
       "nation": "america",
       "duration": 123,
       "year": 2022,
-      "rating": null,
+      "rating": 4,
       "category": "action",
       "status": "most_rated",
       "movie_description": "Phim Dr.strange là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -293,7 +294,7 @@
       "nation": "japan",
       "duration": 132,
       "year": 2018,
-      "rating": null,
+      "rating": 5,
       "category": "comedy, anime",
       "status": "new",
       "movie_description": "Phim Konosuba là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -331,7 +332,7 @@
       "nation": "japan",
       "duration": 135,
       "year": 2022,
-      "rating": null,
+      "rating": 1,
       "category": "action, anime",
       "status": "on_air",
       "movie_description": "Phim Naruto là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -388,7 +389,7 @@
       "nation": "america",
       "duration": 139,
       "year": 2018,
-      "rating": null,
+      "rating": 1,
       "category": "horror",
       "status": "most_rated",
       "movie_description": "Phim Búp bê ma Chunky là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -635,7 +636,7 @@
       "nation": "korea",
       "duration": 150,
       "year": 2022,
-      "rating": 5,
+      "rating": 4,
       "category": "romantic",
       "status": "on_air",
       "movie_description": "Phim Hẹn hò chốn công sở là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -750,7 +751,7 @@
       "duration": 154,
       "year": 2022,
       "rating": null,
-      "category": "romantic, anime",
+      "category": "romantic",
       "status": "most_rated",
       "movie_description": "Phim Tháng tư là lời nói dối của em là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
       "link": "https://www.youtube.com/embed/3aL0gDZtFbE",
@@ -787,7 +788,7 @@
       "nation": "america",
       "duration": 154,
       "year": 2022,
-      "rating": 5,
+      "rating": 3,
       "category": "action",
       "status": "comming_soon",
       "movie_description": "Phim Dr.Strange in the multiverse of madness là bộ phim giả tưởng kể về một nhóm siêu anh hùng với những khả năng đặc biệt, họ bao gồm: Người Sắt, Thor, Captain America, và Người Khổng Lồ được gọi chung với cái tên SHIELD. Mục đích của SHIELD là nhằm bảo vệ Trái đất khỏi âm mưu hủy hoại của những thế lực xấu từ ngoài địa cầu.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus quo quod, tenetur minima cupiditate autem in cumque tempora nesciunt fugit laudantium earum at repudiandae itaque suscipit, mollitia quas? Facere distinctio molestiae veniam ipsam veritatis. Exercitationem in velit laborum. Cupiditate tempora quam in corrupti consequuntur magni temporibus, voluptatibus dolore dolorem? Ullam!",
@@ -891,47 +892,186 @@
         "week": 1355,
         "month": 5434
       }
+    },
+    {
+      "id": 50,
+      "movie_title": "Ngay hom nay em cuoi",
+      "number_of_chap": "",
+      "director": "",
+      "img": "",
+      "nation": "VietNam",
+      "duration": "",
+      "rating": 5,
+      "year": "2022",
+      "status": "",
+      "category": "",
+      "movie_description": "",
+      "link": "https://www.youtube.com/embed/NuWAl7-Vkwk",
+      "view": {
+        "week": "",
+        "month": ""
+      }
     }
   ],
   "user": [
     {
-      "id": 1,
       "userName": "admin",
       "password": "admin",
-      "role": "admin"
+      "role": "admin",
+      "id": 1
     },
     {
       "userName": "minhdong",
       "password": "123",
+      "rating": 3,
       "role": "member",
-      "comment": [
-        {
-          "id": 1,
-          "content": "Phim hay qua"
-        }
-      ],
       "id": 2
     },
     {
       "userName": "viethung",
       "password": "123",
+      "rating": 1,
       "role": "member",
-      "comment": [],
       "id": 3
     },
     {
       "userName": "chaunv",
       "password": "123",
+      "rating": 1,
       "role": "member",
-      "comment": [],
       "id": 4
     },
     {
       "userName": "huynq",
       "password": "123",
+      "rating": 1,
       "role": "member",
-      "comment": [],
       "id": 5
+    },
+    {
+      "userName": "Ngô Minh Đông",
+      "email": "dongnm@vmodev.com",
+      "userImage": "https://lh3.googleusercontent.com/a/AATXAJysvMzflnfBpyXBOoKLcX3dlYchN-UBrmwQgO4p=s96-c",
+      "role": "member",
+      "id": "3MFGDrVzOJejINcQW9hFVKuPBNI2",
+      "rating": 1
+    },
+    {
+      "userName": "Minh Đông",
+      "email": "minhdong20499@gmail.com",
+      "userImage": "https://graph.facebook.com/2843203639314007/picture",
+      "role": "member",
+      "id": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "password": "123",
+      "rating": 3,
+      "picture": "https://graph.facebook.com/2843203639314007/picture"
+    }
+  ],
+  "comment": [
+    {
+      "movieId": "3",
+      "userId": 3,
+      "content": "bt",
+      "date": "16:59:36, 11/5/2022",
+      "id": 11
+    },
+    {
+      "movieId": "3",
+      "userId": 3,
+      "content": "tét",
+      "date": "17:05:29, 11/5/2022",
+      "id": 12
+    },
+    {
+      "movieId": "1",
+      "userId": 3,
+      "content": "Phim này hay nè ! ",
+      "date": "17:06:28, 11/5/2022",
+      "id": 13
+    },
+    {
+      "movieId": "16",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "Hài hước thật sự !",
+      "date": "17:08:52, 11/5/2022",
+      "id": 14
+    },
+    {
+      "movieId": "2",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "Thanos OP quá -.-",
+      "date": "17:11:18, 11/5/2022",
+      "id": 15
+    },
+    {
+      "movieId": "1",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "ọe",
+      "date": "17:13:10, 11/5/2022",
+      "id": 17
+    },
+    {
+      "movieId": "24",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "Phim này lạ quá ! ",
+      "date": "17:22:31, 11/5/2022",
+      "id": 18
+    },
+    {
+      "movieId": "16",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": ".",
+      "date": "17:27:46, 11/5/2022",
+      "id": 19
+    },
+    {
+      "movieId": "3",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "a test",
+      "date": "22:56:19, 11/5/2022",
+      "id": 20
+    },
+    {
+      "movieId": "3",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "Phim hay không xem phí tiền ! ",
+      "date": "22:58:27, 11/5/2022",
+      "id": 21
+    },
+    {
+      "movieId": "3",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "gggg",
+      "date": "23:45:49, 11/5/2022",
+      "id": 23
+    },
+    {
+      "movieId": "3",
+      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
+      "content": "this is a test value",
+      "date": "00:21:57, 12/5/2022",
+      "id": 24
+    },
+    {
+      "movieId": "34",
+      "userId": 2,
+      "content": "Thứ tình cảm vớ vẩn ! -.-",
+      "date": "10:42:21, 13/5/2022",
+      "id": 67
+    }
+  ],
+  "rate": [
+    {
+      "rating": 1,
+      "userId": 2,
+      "movieId": 1,
+      "id": 1
+    },
+    {
+      "rating": 4,
+      "userId": 2,
+      "movieId": 1,
+      "id": 1
     }
   ]
 }

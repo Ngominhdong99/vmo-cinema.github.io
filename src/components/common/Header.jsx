@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "../../scss/common/Header.scss";
 import { BiSearchAlt2, BiLogOut } from "react-icons/bi";
+import { AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { setSearchData } from "../../services/store/action";
 import { useDispatch } from "react-redux";
 import queryString from "query-string";
 import { setCurrentUser } from "../../services/store/action";
+import { auth } from "../../Firebase/config";
 
 function Header({ currentUser }) {
   const [inputSearch, setInputSeach] = useState({
@@ -31,13 +33,29 @@ function Header({ currentUser }) {
     navigate("/filter-movie");
   };
 
+  const onChangeFilter = (key, value) => {
+    const params = {
+      movie_title_like: "",
+      category_like: "",
+      nation_like: "",
+      status_like: "",
+    };
+    params[key] = value;
+    console.log(params);
+    setInputSeach(params);
+  };
+
+  React.useEffect(() => {
+    fetchSearch();
+  }, [inputSearch]);
+
   return (
     <header className="header">
       <div className="header-nav">
         <img
           src="/images/motchill.png"
           alt="logo"
-          onClick={() => navigate("/home-movie")}
+          onClick={() => navigate("/")}
         />
         <div className="nav-items">
           <ul>
@@ -48,12 +66,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("category_like", "action");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      category_like: "action",
-                    });
                   }}
                 >
                   Hành Động
@@ -63,12 +77,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("category_like", "comedy");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      category_like: "comedy",
-                    });
                   }}
                 >
                   Hài Hước
@@ -78,12 +88,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("category_like", "romantic");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      category_like: "romantic",
-                    });
                   }}
                 >
                   Tình Cảm
@@ -93,12 +99,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("category_like", "anime");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      category_like: "anime",
-                    });
                   }}
                 >
                   Anime
@@ -112,12 +114,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("nation_like", "america");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      nation_like: "america",
-                    });
                   }}
                 >
                   Mỹ
@@ -127,12 +125,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("nation_like", "japan");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      nation_like: "japan",
-                    });
                   }}
                 >
                   Nhật Bản
@@ -142,12 +136,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("nation_like", "korea");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      nation_like: "korea",
-                    });
                   }}
                 >
                   Hàn Quốc
@@ -157,12 +147,8 @@ function Header({ currentUser }) {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
+                    onChangeFilter("nation_like", "thailand");
                     navigate("/filter-movie");
-                    fetchSearch();
-                    setInputSeach({
-                      ...inputSearch,
-                      nation_like: "thailand",
-                    });
                   }}
                 >
                   Thái Lan
@@ -176,12 +162,8 @@ function Header({ currentUser }) {
                 to="filter-movie"
                 onClick={(e) => {
                   e.preventDefault();
+                  onChangeFilter("status_like", "new");
                   navigate("/filter-movie");
-                  fetchSearch();
-                  setInputSeach({
-                    ...inputSearch,
-                    status_like: "new",
-                  });
                 }}
               >
                 Phim mới
@@ -193,12 +175,8 @@ function Header({ currentUser }) {
                 href="/"
                 onClick={(e) => {
                   e.preventDefault();
+                  onChangeFilter("status_like", "most_rated");
                   navigate("/filter-movie");
-                  fetchSearch();
-                  setInputSeach({
-                    ...inputSearch,
-                    status_like: "most_rated",
-                  });
                 }}
               >
                 Top rate
@@ -210,12 +188,8 @@ function Header({ currentUser }) {
                 href="/"
                 onClick={(e) => {
                   e.preventDefault();
+                  onChangeFilter("status_like", "on_air");
                   navigate("/filter-movie");
-                  fetchSearch();
-                  setInputSeach({
-                    ...inputSearch,
-                    status_like: "on_air",
-                  });
                 }}
               >
                 Đang chiếu
@@ -227,14 +201,18 @@ function Header({ currentUser }) {
           {JSON.parse(localStorage.getItem("user")) ? (
             <ul>
               <li>{JSON.parse(localStorage.getItem("user")).userName}</li>
-              <ul className="user">
-                <BiLogOut
-                  onClick={() => {
-                    localStorage.removeItem("user");
-                    dispatch(setCurrentUser(""));
-                  }}
-                />
-              </ul>
+              <li
+                className="user"
+                onClick={() => {
+                  localStorage.removeItem("user");
+                  localStorage.removeItem("rate");
+                  dispatch(setCurrentUser(""));
+                  auth.signOut();
+                }}
+              >
+                Sign Out
+                <BiLogOut />
+              </li>
             </ul>
           ) : (
             <a

@@ -19,7 +19,7 @@ function FilterMovie({ searchData, datas }) {
     const paramsString = queryString.stringify(inputFilter, {
       skipEmptyString: true,
     });
-
+    console.log(paramsString);
     const response = await fetch(`http://localhost:3000/data/?${paramsString}`);
     const searchData = await response.json();
     dispatch(setSearchData(searchData));
@@ -27,11 +27,11 @@ function FilterMovie({ searchData, datas }) {
 
   const handleFilter = () => {
     fetchSearch();
-    setInputFilter({
-      category_like: "",
-      nation_like: "",
-      year_like: "",
-    });
+    // setInputFilter({
+    //   category_like: "",
+    //   nation_like: "",
+    //   year_like: "",
+    // });
   };
 
   return (

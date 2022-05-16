@@ -1,0 +1,130 @@
+.comment-container {
+  margin-top: 5%;
+  background-color: #fff;
+  font-family: "roboto";
+  border-radius: 0.5rem;
+
+  & .comment-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: #000000;
+  }
+
+  & .input-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+
+    & input {
+      height: 4rem;
+      width: 89%;
+      padding: 0.5rem;
+      outline: none;
+      border: 1px solid #166fe5;
+      font-family: "roboto";
+      border-radius: 0.5rem;
+    }
+    & button {
+      height: 4rem;
+      width: 10%;
+      background-color: #166fe5;
+      color: #fff;
+      border: none;
+      font-family: "roboto";
+      font-size: 16px;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .comment-section {
+    border-top: 1px solid #166fe5;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    color: #000000;
+
+    & .comment-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      margin: 0 1% 1% 1%;
+      border-bottom: 1px solid #166fe5;
+      height: 5.5rem;
+
+      & img {
+        object-fit: cover;
+        margin-left: 0.5%;
+        padding-right: 0.5%;
+        border-right: 1px solid #166fe5;
+        width: 5%;
+      }
+
+      & .content {
+        margin-left: 1%;
+
+        & .name-date {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          & h3 {
+            text-transform: capitalize;
+            color: #166fe5;
+          }
+
+          & span {
+            font-size: 12px;
+            margin-left: 1rem;
+            color: rgb(95, 95, 95);
+          }
+        }
+
+        & p {
+          width: 100%;
+          color: #000000;
+          transform: translateY(0.4rem);
+        }
+        & .btn-delete-comment {
+          margin-top: 8%;
+          background-color: transparent;
+          border: none;
+          color: #166fe5;
+          cursor: pointer;
+          transition: all 0.3s linear;
+
+          &:hover {
+            color: #003f91;
+          }
+        }
+      }
+    }
+
+    & img {
+      margin-top: -1%;
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
+
+.login-link {
+  margin: 0 7px 0 7px;
+  color: #f1f1f1;
+  transition: all 0.3s linear;
+
+  &:hover {
+    color: #166fe5;
+    text-decoration: none;
+  }
+}

@@ -2,10 +2,13 @@ import {
   GET_DATA,
   GET_ITEM,
   SET_STAR,
+  CURRENT_RATING,
   SEARCH_DATA,
   GET_USER,
+  SET_USER,
   SET_CURRENT_USER,
   PICKED_MOVIE,
+  GET_COMMENT,
 } from "../store/Constant";
 
 const initState = {
@@ -33,6 +36,12 @@ const initState = {
       month: "",
     },
   },
+  userInput: {
+    userName: "",
+    password: "",
+    role: "",
+  },
+  comments: [],
 };
 
 const movieReducer = (state = initState, action) => {
@@ -48,11 +57,15 @@ const movieReducer = (state = initState, action) => {
         ...state,
         currentData: action.payload,
       };
-
+    case PICKED_MOVIE:
+      return {
+        ...state,
+        pickedMovie: action.payload,
+      };
+    // Rating
     case SET_STAR:
       const updateStar = state.datas.map((data) => {
         if (data.id === action.payload.id) {
-          console.log(action.payload);
           data.rating = action.payload.ratingValue;
         }
         return data;
@@ -61,6 +74,8 @@ const movieReducer = (state = initState, action) => {
         ...state,
         datas: [...updateStar],
       };
+
+    //
     case SEARCH_DATA:
       return {
         ...state,
@@ -73,17 +88,22 @@ const movieReducer = (state = initState, action) => {
         ...state,
         users: action.payload,
       };
+    case SET_USER:
+      return {
+        ...state,
+        userInput: action.payload,
+      };
     case SET_CURRENT_USER:
       return {
         ...state,
         currentUser: action.payload,
       };
 
-    // Movie
-    case PICKED_MOVIE:
+    // Comment
+    case GET_COMMENT:
       return {
         ...state,
-        pickedMovie: action.payload,
+        comments: action.payload,
       };
   }
   return state;

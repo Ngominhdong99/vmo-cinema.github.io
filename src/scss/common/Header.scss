@@ -88,6 +88,7 @@
     }
 
     .user {
+      position: absolute;
       display: none;
     }
 
@@ -97,26 +98,26 @@
       cursor: pointer;
       border-radius: 5px;
       padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         background-color: #aaaaaa;
 
         .user {
-          background-color: #f1f1f1;
-          color: #333;
+          background-color: #aaaaaa;
+          color: #f1f1f1;
           display: flex;
-          position: absolute;
-          flex-direction: column;
           justify-content: center;
-          align-self: center;
-          margin-left: -1%;
-          margin-top: 2rem;
-          text-align: center;
-          font-size: 24px;
+          align-items: center;
+          height: 3rem;
+          width: 5rem;
+          margin-top: 8.1rem;
+          border-radius: 5px;
 
           &:hover {
-            background-color: #333;
-            color: #f1f1f1;
+            color: #333;
             border-radius: 5px;
           }
         }

@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { addUser } from "../../services/store/action";
+import { addUser, setUser, updateUser } from "../../services/store/action";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const FormElement = styled.form`
   display: flex;
@@ -26,12 +27,14 @@ const ButtonDiv = styled.div`
     font-size: 16px;
     background: transparent;
     border-radius: 10px;
-    border-color: #fff;
+    border: none;
+    background-color: #6060bd;
+    color: #fff;
     cursor: pointer;
 
     &:hover {
       transition: all 0.3s linear;
-      background-color: #cc6d00;
+      background-color: #2929bb;
     }
   }
 `;
@@ -56,24 +59,33 @@ const DivElement = styled.div`
     color: #000000;
   }
 `;
-function Users() {
-  const [user, setUser] = React.useState({
-    userName: "",
-    password: "",
-    role: "",
-    comment: [],
-  });
+function Users({ userInput }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleAddUser = (e) => {
     e.preventDefault();
-    dispatch(addUser(user));
-    setUser({
-      userName: "",
-      password: "",
-      role: "",
-      comment: [],
-    });
+    dispatch(addUser(userInput));
+    dispatch(
+      setUser({
+        userName: "",
+        password: "",
+        role: "",
+        userImage: "",
+      })
+    );
+  };
+  const handleUpdateUser = () => {
+    dispatch(updateUser(userInput));
+    navigate("/admin/list-user");
+    dispatch(
+      setUser({
+        userName: "",
+        password: "",
+        role: "",
+        comment: [],
+      })
+    );
   };
   return (
     <>
@@ -82,12 +94,14 @@ function Users() {
           <label>User name</label>
           <input
             type="text"
-            value={user.userName}
+            value={userInput.userName}
             onChange={(e) =>
-              setUser({
-                ...user,
-                userName: e.target.value,
-              })
+              dispatch(
+                setUser({
+                  ...userInput,
+                  userName: e.target.value,
+                })
+              )
             }
           />
         </DivElement>
@@ -95,12 +109,14 @@ function Users() {
           <label>User password</label>
           <input
             type="text"
-            value={user.password}
+            value={userInput.password}
             onChange={(e) =>
-              setUser({
-                ...user,
-                password: e.target.value,
-              })
+              dispatch(
+                setUser({
+                  ...userInput,
+                  password: e.target.value,
+                })
+              )
             }
           />
         </DivElement>
@@ -108,19 +124,21 @@ function Users() {
           <label>Role</label>
           <input
             type="text"
-            value={user.role}
+            value={userInput.role}
             onChange={(e) =>
-              setUser({
-                ...user,
-                role: e.target.value,
-              })
+              dispatch(
+                setUser({
+                  ...userInput,
+                  role: e.target.value,
+                })
+              )
             }
           />
         </DivElement>
       </FormElement>
       <ButtonDiv>
         <button onClick={(e) => handleAddUser(e)}>Add</button>
-        <button>Update</button>
+        <button onClick={(e) => handleUpdateUser(e)}>Update</button>
       </ButtonDiv>
     </>
   );

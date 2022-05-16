@@ -2,12 +2,15 @@ import React from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsKey } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+import { FaFacebookF } from "react-icons/fa";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import getInformation from "../../Firebase/Firebase";
+// import getInformation from "../../Firebase/Firebase";
 import { useDispatch } from "react-redux";
-import { getUser, setCurrentUser } from "../../services/store/action";
+import { getUser, setCurrentUser, addUser } from "../../services/store/action";
+import firebase, { auth, db } from "../../Firebase/config";
+import { addDocument } from "../../Firebase/services";
 
 const FormContainer = styled.form`
   display: flex;
@@ -102,7 +105,7 @@ const FormContainer = styled.form`
   }
 `;
 
-function LoginForm({ users }) {
+function LoginForm({ users, currentUser }) {
   const [inputValue, setInputValue] = React.useState({
     userName: "",
     password: "",
@@ -118,7 +121,7 @@ function LoginForm({ users }) {
         user.role !== "admin"
       ) {
         localStorage.setItem("user", JSON.stringify(user));
-        navigate("/home-movie");
+        navigate("/");
         dispatch(setCurrentUser(user));
       }
       if (
@@ -133,12 +136,83 @@ function LoginForm({ users }) {
     });
   };
 
+  const fbProvider = new firebase.auth.FacebookAuthProvider();
+  const ggProvider = new firebase.auth.GoogleAuthProvider();
   const loginWithGoogle = async (e) => {
     e.preventDefault();
-    await getInformation();
-    navigate("/home-movie");
-    dispatch(setCurrentUser(JSON.parse(localStorage.getItem("user"))));
+    const { additionalUserInfo, user } = await auth.signInWithPopup(ggProvider);
+
+    if (additionalUserInfo.isNewUser) {
+      addDocument("user", {
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        providerId: additionalUserInfo.providerId,
+      });
+      dispatch(
+        addUser({
+          userName: user.displayName,
+          email: user.email,
+          userImage: user.photoURL,
+          createdAt: user.createdAt,
+          role: "member",
+          id: user.uid,
+        })
+      );
+    }
   };
+  const loginWithFacebook = async (e) => {
+    e.preventDefault();
+    const { additionalUserInfo, user } = await auth.signInWithPopup(fbProvider);
+
+    if (additionalUserInfo.isNewUser) {
+      addDocument("user", {
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        providerId: additionalUserInfo.providerId,
+      });
+      dispatch(
+        addUser({
+          userName: user.displayName,
+          email: user.email,
+          userImage: user.photoURL,
+          createdAt: user.createdAt,
+          role: "member",
+          id: user.uid,
+        })
+      );
+    }
+  };
+
+  React.useEffect(() => {
+    const unsubcribed = auth.onAuthStateChanged((user) => {
+      if (user) {
+        const { displayName, email, uid, photoURL } = user;
+        navigate("/");
+        dispatch(setCurrentUser({ displayName, email, uid, photoURL }));
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            userName: displayName,
+            email: email,
+            picture: photoURL,
+            id: uid,
+          })
+        );
+        return;
+      }
+
+      navigate("/login");
+    });
+
+    return () => {
+      unsubcribed();
+    };
+  }, [navigate]);
+
   return (
     <FormContainer>
       <ToastContainer position="top-right" />
@@ -199,6 +273,12 @@ function LoginForm({ users }) {
         <FcGoogle className="icon" />
         <a href="/" onClick={(e) => loginWithGoogle(e)}>
           Or sign-in with Google
+        </a>
+      </div>
+      <div id="sign-with-google">
+        <FaFacebookF className="icon" color="blue" />
+        <a href="/" onClick={(e) => loginWithFacebook(e)}>
+          Or sign-in with Facebook
         </a>
       </div>
       <div>

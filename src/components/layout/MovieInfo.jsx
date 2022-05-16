@@ -9,15 +9,53 @@ import { AiFillStar } from "react-icons/ai";
 import { FaStarHalfAlt } from "react-icons/fa";
 
 function MovieInfo({ datas, currentData }) {
+  const [currentUserRating, setCurrentUserRating] = React.useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
+
+  const fetchStar = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/rate?movieId=${Number(id)}
+        `
+      );
+      const data = await response.json();
+      setCurrentUserRating(data);
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getItem(id));
   }, [id, dispatch]);
 
+  useEffect(() => {
+    fetchStar();
+
+    // setRate to local to show current rating
+    const fetchCurrentStar = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/rate?movieId=${id}&userId=${
+            JSON.parse(localStorage.getItem("user")).id
+          }`
+        );
+        const data = await response.json();
+        localStorage.setItem("rate", JSON.stringify(data));
+      } catch (error) {
+        throw new Error(error);
+      }
+    };
+    //
+    fetchCurrentStar();
+  }, []);
+
+  const totalValue = currentUserRating.reduce((total, rate) => {
+    return (total = total + rate.rating);
+  }, 0);
   return (
     <>
       <p className="movie-link">
@@ -28,7 +66,7 @@ function MovieInfo({ datas, currentData }) {
         <div className="info-left">
           <div className="select-section">
             <img src={currentData.img} alt={currentData.movie_title} />
-            <div>
+            <div className="btn-container">
               <ButtonTrailer
                 className="button"
                 onClick={() => {
@@ -73,12 +111,10 @@ function MovieInfo({ datas, currentData }) {
                   {/* - Lượt xem: {currentData.view.month} */}
                 </p>
                 <div className="movie-rating">
-                  <p>Đánh giá phim: </p>
-                  <StarRating
-                    className="star-rating"
-                    id={id}
-                    currentData={currentData}
-                  />
+                  <p>
+                    Tổng điểm đánh giá: {totalValue / currentUserRating.length}
+                  </p>
+                  <p>Tổng lượt đánh giá: {currentUserRating.length}</p>
                 </div>
               </div>
             </div>

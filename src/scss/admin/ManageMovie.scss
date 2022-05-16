@@ -79,7 +79,7 @@
   justify-content: center;
   align-items: center;
 
-  & button {
+  & .btn-active {
     height: 3rem;
     width: 8rem;
     margin-left: 1rem;
@@ -87,12 +87,18 @@
     font-size: 16px;
     background: transparent;
     border-radius: 10px;
-    border-color: #fff;
+    border: none;
+    background-color: #6060bd;
+    color: #fff;
     cursor: pointer;
 
     &:hover {
       transition: all 0.3s linear;
-      background-color: #cc6d00;
+      background-color: #2929bb;
     }
+  }
+
+  & .btn-inactive {
+    display: none;
   }
 }

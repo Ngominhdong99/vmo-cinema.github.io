@@ -14,7 +14,7 @@ function MovieInfo() {
   const { id } = useParams();
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, [navigate]);
   React.useEffect(() => {
     dispatch(getItem(id));
   }, [id, dispatch]);

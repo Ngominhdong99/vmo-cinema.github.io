@@ -238,8 +238,15 @@ function ManageMovie({ pickedMovie }) {
         </div>
       </form>
       <div className="btn-group">
-        <button onClick={() => handleAddMovie()}>Add</button>
-        <button onClick={() => handleUpdateMovie(pickedMovie)}>Update</button>
+        <button className="btn-active" onClick={() => handleAddMovie()}>
+          Add
+        </button>
+        <button
+          className="btn-active"
+          onClick={() => handleUpdateMovie(pickedMovie)}
+        >
+          Update
+        </button>
       </div>
     </>
   );

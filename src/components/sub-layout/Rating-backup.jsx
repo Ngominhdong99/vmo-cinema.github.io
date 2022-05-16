@@ -4,37 +4,16 @@ import { AiFillStar } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { setCurrentUser, setStar } from "../../services/store/action";
 
-function StarRating({ params }) {
-  const [currentUserRating, setCurrentUserRating] = React.useState([]);
-  const [rate, setRate] = useState(0);
-  const [hover, setHover] = useState(0);
-  const [reload, setReload] = useState(false);
+function StarRating({ currentUser, params }) {
+  const [currentUserRating, setCurrentUserRating] = React.useState(
+    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : ""
+  );
+  const [rate, setRate] = useState(null);
+  const [hover, setHover] = useState(null);
   const dispatch = useDispatch();
 
-  const fetchStar = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:3000/rate?movieId=${params.id}&userId=${
-          JSON.parse(localStorage.getItem("user")).id
-        }`
-      );
-      const data = await response.json();
-      setCurrentUserRating(data);
-      localStorage.setItem("rate", JSON.stringify(data));
-    } catch (error) {
-      throw new Error(error);
-    }
-  };
-
   React.useEffect(() => {
-    if (currentUserRating.length > 0) {
-      currentUserRating.map((curRate) => {
-        setCurrentUserRating({
-          ...curRate,
-          rating: rate,
-        });
-      });
-    } else {
+    if (rate !== null) {
       setCurrentUserRating({
         ...currentUserRating,
         rating: rate,
@@ -43,7 +22,7 @@ function StarRating({ params }) {
   }, [rate]);
 
   React.useEffect(() => {
-    fetchStar();
+    dispatch(setCurrentUser(JSON.parse(localStorage.getItem("user"))));
   }, []);
 
   return (
@@ -61,17 +40,13 @@ function StarRating({ params }) {
               onClick={() => {
                 setRate(ratingValue);
                 dispatch(setStar(currentUserRating));
-                localStorage.setItem("rate", JSON.stringify(currentUserRating));
               }}
             />
             <AiFillStar
               size={20}
               className="star"
               color={
-                ratingValue <=
-                (hover ||
-                  rate ||
-                  JSON.parse(localStorage.getItem("rate"))[0]?.rating)
+                ratingValue <= (hover || rate || currentUser?.rating)
                   ? "yellow"
                   : "grey"
               }
@@ -80,7 +55,7 @@ function StarRating({ params }) {
               }}
               onMouseLeave={() => {
                 setHover(null);
-                // dispatch(setStar(currentUserRating));
+                dispatch(setStar(currentUserRating));
               }}
             />
           </label>

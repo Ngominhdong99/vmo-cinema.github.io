@@ -122,7 +122,7 @@ function LoginForm() {
     userName: "",
     password: "",
     role: "member",
-    comment: [],
+    userImage: "",
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();

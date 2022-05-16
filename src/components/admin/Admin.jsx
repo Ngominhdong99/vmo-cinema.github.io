@@ -30,7 +30,7 @@ function Admin() {
           onClick={() => {
             dispatch(setCurrentUser([]));
             localStorage.removeItem("user");
-            navigate("/home-movie");
+            navigate("/");
           }}
         />
       </div>
