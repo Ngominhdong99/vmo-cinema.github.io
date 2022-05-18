@@ -22,7 +22,7 @@ function HomeMovies({ datas }) {
                     navigate(`/movie-info/${item.id}`);
                   }}
                 >
-                  <img src={item.img} alt={item.movie_title} className="" />
+                  <img src={item.img} alt={item.movie_title} />
                   <div className="home-movie-name">{item.movie_title}</div>
                 </div>
               );
@@ -42,7 +42,7 @@ function HomeMovies({ datas }) {
                     navigate(`/movie-info/${item.id}`);
                   }}
                 >
-                  <img src={item.img} alt={item.movie_title} className="" />
+                  <img src={item.img} alt={item.movie_title} />
                   <div className="home-movie-name">{item.movie_title}</div>
                 </div>
               );
@@ -62,7 +62,7 @@ function HomeMovies({ datas }) {
                     navigate(`/movie-info/${item.id}`);
                   }}
                 >
-                  <img src={item.img} alt={item.movie_title} className="" />
+                  <img src={item.img} alt={item.movie_title} />
                   <div className="home-movie-name">{item.movie_title}</div>
                 </div>
               );

@@ -2,7 +2,7 @@ import React from "react";
 import "../../scss/admin/Pagination.scss";
 
 const Pagination = ({ datas, moviePerPage, setCurrentPage }) => {
-  const [isCurrent, setIscurrent] = React.useState(false);
+  const [current, setCurrent] = React.useState(1);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const pageNumbers = [];
@@ -13,14 +13,13 @@ const Pagination = ({ datas, moviePerPage, setCurrentPage }) => {
   return (
     <nav>
       <ul className="pagination">
-        {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
+        {pageNumbers.map((number, index) => (
+          <li key={index} className={index + 1 === current ? "active" : null}>
             <a
               onClick={() => {
                 paginate(number);
-                setIscurrent(true);
+                setCurrent(index + 1);
               }}
-              //   className={isCurrent ? "current" : ""}
             >
               {number}
             </a>
@@ -32,3 +31,15 @@ const Pagination = ({ datas, moviePerPage, setCurrentPage }) => {
 };
 
 export default Pagination;
+
+// {
+//   new Array(numberOfButton).fill("").map((el, index) => {
+//     return (
+//       <li class={`page-item ${index + 1 === counter ? "active" : null}`}>
+//         <a class="page-link" href="#" onClick={() => setCounter(index + 1)}>
+//           {index + 1}
+//         </a>
+//       </li>
+//     );
+//   });
+// }

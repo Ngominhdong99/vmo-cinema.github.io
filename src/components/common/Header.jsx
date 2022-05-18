@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../scss/common/Header.scss";
 import { BiSearchAlt2, BiLogOut } from "react-icons/bi";
-import { AiOutlineRight } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { setSearchData } from "../../services/store/action";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,7 @@ import queryString from "query-string";
 import { setCurrentUser } from "../../services/store/action";
 import { auth } from "../../Firebase/config";
 
-function Header({ currentUser }) {
+function Header({}) {
   const [inputSearch, setInputSeach] = useState({
     movie_title_like: "",
     category_like: "",
@@ -41,7 +41,6 @@ function Header({ currentUser }) {
       status_like: "",
     };
     params[key] = value;
-    console.log(params);
     setInputSeach(params);
   };
 
@@ -213,6 +212,11 @@ function Header({ currentUser }) {
                 Sign Out
                 <BiLogOut />
               </li>
+              {JSON.parse(localStorage.getItem("user"))?.role === "admin" ? (
+                <li className="admin">Admin page</li>
+              ) : (
+                ""
+              )}
             </ul>
           ) : (
             <a

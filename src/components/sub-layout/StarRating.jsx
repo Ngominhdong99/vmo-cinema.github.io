@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import "../../scss/sub-layout/StarRating.scss";
 import { AiFillStar } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { setCurrentUser, setStar } from "../../services/store/action";
+import { addStar, setCurrentUser, setStar } from "../../services/store/action";
 
 function StarRating({ params }) {
-  const [currentUserRating, setCurrentUserRating] = React.useState([]);
+  const [currentUserRating, setCurrentUserRating] = React.useState({
+    userId: JSON.parse(localStorage.getItem("user")).id,
+    rating: 0,
+    movieId: Number(params.id),
+  });
   const [rate, setRate] = useState(0);
   const [hover, setHover] = useState(0);
-  const [reload, setReload] = useState(false);
   const dispatch = useDispatch();
 
   const fetchStar = async () => {
@@ -26,20 +29,37 @@ function StarRating({ params }) {
     }
   };
 
-  React.useEffect(() => {
-    if (currentUserRating.length > 0) {
-      currentUserRating.map((curRate) => {
-        setCurrentUserRating({
-          ...curRate,
-          rating: rate,
-        });
-      });
-    } else {
-      setCurrentUserRating({
-        ...currentUserRating,
-        rating: rate,
-      });
+  // console.log(currentUserRating);
+
+  const handleSetRating = () => {
+    if (JSON.parse(localStorage.getItem("rate")).length > 0) {
+      dispatch(setStar(currentUserRating));
+      localStorage.setItem("rate", JSON.stringify(currentUserRating));
+    } else if (JSON.parse(localStorage.getItem("rate")).length === 0) {
+      dispatch(
+        addStar({
+          userId: JSON.parse(localStorage.getItem("user")).id,
+          rating: Number(rate),
+          movieId: Number(params.id),
+        })
+      );
+      localStorage.setItem("rate", JSON.stringify(currentUserRating));
     }
+  };
+  React.useEffect(() => {
+    // if (currentUserRating.length > 0) {
+    //   currentUserRating.map((curRate) => {
+    //     setCurrentUserRating({
+    //       ...curRate,
+    //       rating: rate,
+    //     });
+    //   });
+    // } else {
+    setCurrentUserRating({
+      ...currentUserRating[0],
+      rating: rate,
+    });
+    // }
   }, [rate]);
 
   React.useEffect(() => {
@@ -60,8 +80,8 @@ function StarRating({ params }) {
               value={ratingValue}
               onClick={() => {
                 setRate(ratingValue);
-                dispatch(setStar(currentUserRating));
-                localStorage.setItem("rate", JSON.stringify(currentUserRating));
+                handleSetRating();
+                // localStorage.setItem("rate", JSON.stringify(currentUserRating));
               }}
             />
             <AiFillStar

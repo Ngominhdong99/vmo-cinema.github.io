@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsKey } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
@@ -11,6 +11,238 @@ import { useDispatch } from "react-redux";
 import { getUser, setCurrentUser, addUser } from "../../services/store/action";
 import firebase, { auth, db } from "../../Firebase/config";
 import { addDocument } from "../../Firebase/services";
+import LoginValidate from "../../validate/LoginValidate";
+
+function LoginForm({ users, currentUser }) {
+  const [inputValue, setInputValue] = React.useState({
+    userName: "",
+    password: "",
+  });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [error, setError] = React.useState({});
+  const inputRef = useRef();
+
+  const handleLoginAcc = () => {
+    const validate = LoginValidate(inputValue, users);
+    if (!Object.values(validate).some((item) => item)) {
+      users.map((user) => {
+        if (
+          user.userName === inputValue.userName.trim() &&
+          user.password === inputValue.password.trim() &&
+          user.role !== "admin"
+        ) {
+          localStorage.setItem("user", JSON.stringify(user));
+          navigate("/");
+          dispatch(setCurrentUser(user));
+        }
+        if (
+          user.userName === inputValue.userName.trim() &&
+          user.password === inputValue.password.trim() &&
+          user.role === "admin"
+        ) {
+          localStorage.setItem("user", JSON.stringify(user));
+          navigate("/admin");
+          dispatch(setCurrentUser(user));
+        }
+      });
+    } else {
+      setError(validate);
+      inputRef.current.focus();
+    }
+    users.map((person) => {
+      if (
+        person.userName !== inputValue.userName ||
+        person.password !== inputValue.password
+      ) {
+        error.notify = "Tài khoản hoặc mật khẩu không đúng!";
+      }
+      return error;
+    });
+  };
+
+  const fbProvider = new firebase.auth.FacebookAuthProvider();
+  const ggProvider = new firebase.auth.GoogleAuthProvider();
+  const loginWithGoogle = async (e) => {
+    e.preventDefault();
+    const { additionalUserInfo, user } = await auth.signInWithPopup(ggProvider);
+
+    if (additionalUserInfo.isNewUser) {
+      addDocument("user", {
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        providerId: additionalUserInfo.providerId,
+      });
+      dispatch(
+        addUser({
+          userName: user.displayName,
+          email: user.email,
+          userImage: user.photoURL,
+          createdAt: user.createdAt,
+          role: "member",
+          id: user.uid,
+        })
+      );
+    }
+  };
+  const loginWithFacebook = async (e) => {
+    e.preventDefault();
+    const { additionalUserInfo, user } = await auth.signInWithPopup(fbProvider);
+
+    if (additionalUserInfo.isNewUser) {
+      addDocument("user", {
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        providerId: additionalUserInfo.providerId,
+      });
+      dispatch(
+        addUser({
+          userName: user.displayName,
+          email: user.email,
+          userImage: user.photoURL,
+          createdAt: user.createdAt,
+          role: "member",
+          id: user.uid,
+        })
+      );
+    }
+  };
+
+  React.useEffect(() => {
+    const unsubcribed = auth.onAuthStateChanged((user) => {
+      if (user) {
+        const { displayName, email, uid, photoURL } = user;
+        navigate("/");
+        dispatch(setCurrentUser({ displayName, email, uid, photoURL }));
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            userName: displayName,
+            email: email,
+            picture: photoURL,
+            id: uid,
+          })
+        );
+        return;
+      }
+
+      navigate("/login");
+    });
+
+    return () => {
+      unsubcribed();
+    };
+  }, [navigate]);
+
+  React.useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  return (
+    <FormContainer>
+      <ToastContainer position="top-right" />
+      <h1>Login</h1>
+      <p>Please enter your Username and Password</p>
+      <div>
+        <AiOutlineUser className="icon" />
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Enter your Username or E-mail"
+          onChange={(e) => {
+            setInputValue({
+              ...inputValue,
+              userName: e.target.value,
+            });
+            setError({
+              ...error,
+              userName: "",
+              notify: "",
+            });
+          }}
+        />
+      </div>
+      <ErrorMessage>{error.userName}</ErrorMessage>
+      <div>
+        <BsKey className="icon" />
+        <input
+          required
+          type="password"
+          placeholder="Enter your password"
+          onChange={(e) => {
+            setInputValue({
+              ...inputValue,
+              password: e.target.value,
+            });
+            setError({
+              ...error,
+              password: "",
+              notify: "",
+            });
+          }}
+        />
+      </div>
+      <ErrorMessage>{error.password}</ErrorMessage>
+      <ErrorMessage>{error.notify}</ErrorMessage>
+      {/* <div>
+        <i>
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+          >
+            Forgot password?
+          </a>
+        </i>
+      </div> */}
+      <button
+        className="button"
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch(getUser());
+          handleLoginAcc();
+        }}
+      >
+        Login
+      </button>
+      <div id="sign-with-google">
+        <FcGoogle className="icon" />
+        <a href="/" onClick={(e) => loginWithGoogle(e)}>
+          Or sign-in with Google
+        </a>
+      </div>
+      <div id="sign-with-google">
+        <FaFacebookF className="icon" color="blue" />
+        <a href="/" onClick={(e) => loginWithFacebook(e)}>
+          Or sign-in with Facebook
+        </a>
+      </div>
+      <div>
+        <p>
+          Not a member yet?
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/register");
+            }}
+          >
+            Register!
+          </a>
+        </p>
+      </div>
+    </FormContainer>
+  );
+}
+
+const ErrorMessage = styled.span`
+  color: #f83333;
+`;
 
 const FormContainer = styled.form`
   display: flex;
@@ -104,199 +336,5 @@ const FormContainer = styled.form`
     }
   }
 `;
-
-function LoginForm({ users, currentUser }) {
-  const [inputValue, setInputValue] = React.useState({
-    userName: "",
-    password: "",
-  });
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const handleLoginAcc = () => {
-    users.map((user) => {
-      if (
-        user.userName === inputValue.userName.trim() &&
-        user.password === inputValue.password.trim() &&
-        user.role !== "admin"
-      ) {
-        localStorage.setItem("user", JSON.stringify(user));
-        navigate("/");
-        dispatch(setCurrentUser(user));
-      }
-      if (
-        user.userName === inputValue.userName.trim() &&
-        user.password === inputValue.password.trim() &&
-        user.role === "admin"
-      ) {
-        localStorage.setItem("user", JSON.stringify(user));
-        navigate("/admin");
-        dispatch(setCurrentUser(user));
-      }
-    });
-  };
-
-  const fbProvider = new firebase.auth.FacebookAuthProvider();
-  const ggProvider = new firebase.auth.GoogleAuthProvider();
-  const loginWithGoogle = async (e) => {
-    e.preventDefault();
-    const { additionalUserInfo, user } = await auth.signInWithPopup(ggProvider);
-
-    if (additionalUserInfo.isNewUser) {
-      addDocument("user", {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-        uid: user.uid,
-        providerId: additionalUserInfo.providerId,
-      });
-      dispatch(
-        addUser({
-          userName: user.displayName,
-          email: user.email,
-          userImage: user.photoURL,
-          createdAt: user.createdAt,
-          role: "member",
-          id: user.uid,
-        })
-      );
-    }
-  };
-  const loginWithFacebook = async (e) => {
-    e.preventDefault();
-    const { additionalUserInfo, user } = await auth.signInWithPopup(fbProvider);
-
-    if (additionalUserInfo.isNewUser) {
-      addDocument("user", {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-        uid: user.uid,
-        providerId: additionalUserInfo.providerId,
-      });
-      dispatch(
-        addUser({
-          userName: user.displayName,
-          email: user.email,
-          userImage: user.photoURL,
-          createdAt: user.createdAt,
-          role: "member",
-          id: user.uid,
-        })
-      );
-    }
-  };
-
-  React.useEffect(() => {
-    const unsubcribed = auth.onAuthStateChanged((user) => {
-      if (user) {
-        const { displayName, email, uid, photoURL } = user;
-        navigate("/");
-        dispatch(setCurrentUser({ displayName, email, uid, photoURL }));
-        localStorage.setItem(
-          "user",
-          JSON.stringify({
-            userName: displayName,
-            email: email,
-            picture: photoURL,
-            id: uid,
-          })
-        );
-        return;
-      }
-
-      navigate("/login");
-    });
-
-    return () => {
-      unsubcribed();
-    };
-  }, [navigate]);
-
-  return (
-    <FormContainer>
-      <ToastContainer position="top-right" />
-
-      <h1>Login</h1>
-      <p>Please enter your Username and Password</p>
-      <div>
-        <AiOutlineUser className="icon" />
-        <input
-          required
-          type="text"
-          placeholder="Enter your Username or E-mail"
-          onChange={(e) =>
-            setInputValue({
-              ...inputValue,
-              userName: e.target.value,
-            })
-          }
-        />
-      </div>
-      <div>
-        <BsKey className="icon" />
-        <input
-          required
-          type="password"
-          placeholder="Enter your password"
-          onChange={(e) =>
-            setInputValue({
-              ...inputValue,
-              password: e.target.value,
-            })
-          }
-        />
-      </div>
-      <div>
-        <i>
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-          >
-            Forgot password?
-          </a>
-        </i>
-      </div>
-      <button
-        className="button"
-        onClick={(e) => {
-          e.preventDefault();
-          dispatch(getUser());
-          handleLoginAcc();
-        }}
-      >
-        Login
-      </button>
-      <div id="sign-with-google">
-        <FcGoogle className="icon" />
-        <a href="/" onClick={(e) => loginWithGoogle(e)}>
-          Or sign-in with Google
-        </a>
-      </div>
-      <div id="sign-with-google">
-        <FaFacebookF className="icon" color="blue" />
-        <a href="/" onClick={(e) => loginWithFacebook(e)}>
-          Or sign-in with Facebook
-        </a>
-      </div>
-      <div>
-        <p>
-          Not a member yet?
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate("/register");
-            }}
-          >
-            Register!
-          </a>
-        </p>
-      </div>
-    </FormContainer>
-  );
-}
 
 export default LoginForm;

@@ -82,9 +82,13 @@ function FilterMovie({ searchData, datas }) {
           }}
         >
           <option>--Năm--</option>
-          {[...Array(23)].map((year, index) => {
-            return <option key={index}>{`20${index + 1}`}</option>;
-          })}
+          <option>2002</option>
+          <option>2008</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>2020</option>
+          <option>2021</option>
+          <option>2022</option>
         </select>
         <button onClick={() => handleFilter()} className="btn-filter">
           Lọc

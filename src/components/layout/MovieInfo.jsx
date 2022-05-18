@@ -112,7 +112,8 @@ function MovieInfo({ datas, currentData }) {
                 </p>
                 <div className="movie-rating">
                   <p>
-                    Tổng điểm đánh giá: {totalValue / currentUserRating.length}
+                    Tổng điểm đánh giá:{" "}
+                    {(totalValue / currentUserRating.length).toFixed(2)}
                   </p>
                   <p>Tổng lượt đánh giá: {currentUserRating.length}</p>
                 </div>

@@ -15,7 +15,7 @@
     & .btn {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 90%;
 
       & button {
         margin-top: 1rem;
@@ -24,26 +24,37 @@
         color: #f1f1f1;
         border: none;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: 16px;
 
         &:hover {
           transition: all 0.5s linear;
-          background-color: #2929bb;
+          background-color: #2020bd;
         }
+      }
+      .active {
+        transform: scale(1.1);
       }
     }
 
-    & .icon {
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 1rem;
-      cursor: pointer;
+    & .icons-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
 
-      &:hover {
-        transition: all 0.3s linear;
-        transform: scale(1.1);
-        color: #000000;
+      & .icon {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          transition: all 0.3s linear;
+          transform: scale(1.1);
+          color: #000000;
+        }
       }
     }
   }
@@ -53,7 +64,7 @@
     flex-basis: 80%;
     background-color: rgb(210, 214, 230);
     color: #333;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 
     .table {
       height: 90%;
@@ -68,6 +79,50 @@
         width: 100%;
         border: 1px solid black;
         text-align: center;
+      }
+
+      & th {
+        background-color: #6060bd;
+        color: white;
+      }
+      & td {
+        height: 5rem;
+
+        & .btn-edit {
+          background-color: #c8e6c9;
+          color: #388e3c;
+          border: 1px solid #388e3c;
+          padding: 10px 15px 10px 15px;
+          margin-left: 5px;
+          margin-right: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s linear;
+
+          &:hover {
+            background-color: #388e3c;
+            color: #f1f1f1;
+          }
+        }
+        & .btn-delete {
+          background-color: #ffcdd2;
+          color: #c62828;
+          border: 1px solid #c62828;
+          padding: 10px 15px 10px 15px;
+          margin-left: 5px;
+          margin-right: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s linear;
+
+          &:hover {
+            background-color: #d82d2d;
+            color: #f1f1f1;
+          }
+        }
+      }
+      & th:last-child {
+        width: 11rem;
       }
     }
   }

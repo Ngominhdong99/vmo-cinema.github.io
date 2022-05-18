@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsKey } from "react-icons/bs";
 import styled from "styled-components";
@@ -7,8 +7,114 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../services/store/action";
 import { BiArrowBack } from "react-icons/bi";
+import RegisterValidate from "../../validate/RegisterValidate";
 
 import "react-toastify/dist/ReactToastify.css";
+
+function LoginForm() {
+  const [newAcc, setNewAcc] = React.useState({
+    userName: "",
+    password: "",
+    role: "member",
+    userImage: "",
+  });
+  const [error, setError] = React.useState({});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const inputRef = useRef();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const validate = RegisterValidate(newAcc);
+    if (!Object.values(validate).some((item) => item)) {
+      toast.success("Register Success!");
+      dispatch(addUser(newAcc));
+      navigate("/login");
+      setNewAcc({
+        userName: "",
+        password: "",
+      });
+    } else {
+      setError(validate);
+      inputRef.current.focus();
+    }
+  };
+
+  React.useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  return (
+    <FormContainer type="submit">
+      <div className="icon-back" onClick={() => navigate("/login")}>
+        <BiArrowBack />
+        <span>Back to login</span>
+      </div>
+      <h1>Register</h1>
+      <p>Please enter your Username and Password</p>
+      <div>
+        <AiOutlineUser className="icon" />
+        <input
+          ref={inputRef}
+          className={error.userName ? "error-input" : ""}
+          type="text"
+          placeholder="Enter your Username or E-mail"
+          required
+          value={newAcc.userName}
+          onChange={(e) => {
+            setNewAcc({
+              ...newAcc,
+              userName: e.target.value,
+            });
+            setError({
+              ...error,
+              userName: "",
+            });
+          }}
+        />
+      </div>
+      <ErrorMessage className="error">{error.userName}</ErrorMessage>
+      <div>
+        <BsKey className="icon" />
+        <input
+          type="text"
+          placeholder="Enter your password"
+          value={newAcc.password}
+          required
+          onChange={(e) => {
+            setNewAcc({
+              ...newAcc,
+              password: e.target.value,
+            });
+            setError({
+              ...error,
+              password: "",
+            });
+          }}
+        />
+      </div>
+      <ErrorMessage className="error">{error.password}</ErrorMessage>
+      {/* <div>
+        <BsKey className="icon" />
+        <input type="password" placeholder="Re-enter your password" />
+      </div> */}
+
+      <button
+        className="button"
+        type="submit"
+        onClick={(e) => {
+          handleRegister(e);
+        }}
+      >
+        Register
+      </button>
+    </FormContainer>
+  );
+}
+
+const ErrorMessage = styled.span`
+  color: #f83333;
+`;
 
 const FormContainer = styled.form`
   display: flex;
@@ -116,82 +222,5 @@ const FormContainer = styled.form`
     }
   }
 `;
-
-function LoginForm() {
-  const [newAcc, setNewAcc] = React.useState({
-    userName: "",
-    password: "",
-    role: "member",
-    userImage: "",
-  });
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-    toast.success("Register Success!");
-    dispatch(addUser(newAcc));
-    navigate("/login");
-    setNewAcc({
-      userName: "",
-      password: "",
-    });
-  };
-
-  return (
-    <FormContainer>
-      <div className="icon-back" onClick={() => navigate("/login")}>
-        <BiArrowBack />
-        <span>Back to login</span>
-      </div>
-      <h1>Register</h1>
-      <p>Please enter your Username and Password</p>
-      <div>
-        <AiOutlineUser className="icon" />
-        <input
-          type="text"
-          placeholder="Enter your Username or E-mail"
-          required
-          value={newAcc.userName}
-          onChange={(e) =>
-            setNewAcc({
-              ...newAcc,
-              userName: e.target.value,
-            })
-          }
-        />
-      </div>
-      <div>
-        <BsKey className="icon" />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={newAcc.password}
-          required
-          onChange={(e) =>
-            setNewAcc({
-              ...newAcc,
-              password: e.target.value,
-            })
-          }
-        />
-      </div>
-      {/* <div>
-        <BsKey className="icon" />
-        <input type="password" placeholder="Re-enter your password" />
-      </div> */}
-
-      <button
-        className="button"
-        type="submit"
-        onClick={(e) => {
-          handleRegister(e);
-        }}
-      >
-        Register
-      </button>
-    </FormContainer>
-  );
-}
 
 export default LoginForm;

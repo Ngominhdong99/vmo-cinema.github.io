@@ -11,6 +11,7 @@ function Comment({ users, currentUser, currentUserRating }) {
   const dispatch = useDispatch();
   const params = useParams();
   const [reload, setReload] = React.useState(false);
+  const [filterComment, setFilterComment] = React.useState("comment-section");
   const [movieComment, setMovieComment] = React.useState([]);
   const [commentInput, setCommentInput] = React.useState({
     movieId: null,
@@ -61,7 +62,7 @@ function Comment({ users, currentUser, currentUserRating }) {
   };
   React.useEffect(() => {
     fetchComment();
-  }, [reload]);
+  }, [handleDeleteComment]);
 
   if (localStorage.getItem("user")) {
     return (
@@ -69,7 +70,15 @@ function Comment({ users, currentUser, currentUserRating }) {
         <div>
           <div className="comment-filter">
             <p>{movieComment.length} bình luận</p>
-            <select>
+            <select
+              onChange={(e) => {
+                if (e.target.value === "Mới nhất") {
+                  setFilterComment("comment-section");
+                } else if (e.target.value === "Cũ nhất") {
+                  setFilterComment("comment-section reverse");
+                }
+              }}
+            >
               <option>Mới nhất</option>
               <option>Cũ nhất</option>
             </select>
@@ -95,7 +104,7 @@ function Comment({ users, currentUser, currentUserRating }) {
           />
           <button onClick={(e) => handleSendComment(e)}>Gửi bình luận</button>
         </form>
-        <div className="comment-section">
+        <div className={filterComment}>
           {movieComment.map((item, index) => {
             return (
               <div className="comment-item" key={index}>
@@ -133,14 +142,38 @@ function Comment({ users, currentUser, currentUserRating }) {
     );
   } else {
     return (
-      <H1Element>
-        Vui lòng{" "}
-        <Link to="/login" className="login-link">
-          {" "}
-          đăng nhập{" "}
-        </Link>{" "}
-        để đánh giá và bình luận
-      </H1Element>
+      <>
+        <H1Element>
+          Vui lòng{" "}
+          <Link to="/login" className="login-link">
+            {" "}
+            đăng nhập{" "}
+          </Link>{" "}
+          để đánh giá và bình luận
+        </H1Element>
+        <div className="comment-container">
+          {movieComment.map((item, index) => {
+            return (
+              <div className="comment-item" key={index}>
+                <img src="/images/user.png" alt="user" />
+                <div className="content">
+                  {users.map((user, index) => {
+                    if (user.id === item.userId) {
+                      return (
+                        <div key={index} className="name-date">
+                          <h3>{user.userName}</h3>
+                          <span>at: {item.date}</span>
+                        </div>
+                      );
+                    }
+                  })}
+                  <p>{item.content}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </>
     );
   }
 }

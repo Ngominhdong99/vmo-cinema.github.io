@@ -39,9 +39,10 @@ const initState = {
   userInput: {
     userName: "",
     password: "",
+    email: "",
     role: "",
+    userImage: "./images/user.png",
   },
-  comments: [],
 };
 
 const movieReducer = (state = initState, action) => {

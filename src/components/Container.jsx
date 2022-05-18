@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getData, getUser, setCurrentUser } from "../services/store/action";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./common/Header";
+import MovieHeader from "./common/MovieHeader";
 import Slider from "./layout/Slider";
 import HomeMovies from "./layout/HomeMovies";
 import MovieInfo from "./layout/MovieInfo";
@@ -93,7 +94,8 @@ function Container() {
           path="/"
           element={
             <>
-              <Header datas={datas} currentUser={currentUser} />
+              <MovieHeader />
+              {/* <Header datas={datas} currentUser={currentUser} /> */}
               <Slider datas={datas} />
               <HomeMovies datas={datas} currentData={currentData} />
               <Footer />
@@ -105,7 +107,8 @@ function Container() {
           path={`movie-info/:id`}
           element={
             <>
-              <Header datas={datas} currentUser={currentUser} />
+              <MovieHeader />
+              {/* <Header datas={datas} currentUser={currentUser} /> */}
               <MovieInfo
                 datas={datas}
                 currentData={currentData}
@@ -119,7 +122,8 @@ function Container() {
           path="watch-movie/:id"
           element={
             <>
-              <Header datas={datas} currentUser={currentUser} />
+              <MovieHeader />
+              {/* <Header datas={datas} currentUser={currentUser} /> */}
               <WatchMovie />
               <Comment
                 users={users}
@@ -135,7 +139,8 @@ function Container() {
           path="filter-movie"
           element={
             <>
-              <Header datas={datas} />
+              <MovieHeader />
+              {/* <Header datas={datas} /> */}
               <FilterMovie datas={datas} searchData={searchData} />
               <Footer />
             </>

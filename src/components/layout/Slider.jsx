@@ -111,7 +111,7 @@ function Slider({ datas }) {
 }
 
 const MoviesRowContainer = styled.div`
-  back-ground: #333;
+  background-color: #333;
   color: #f1f1f1;
   padding: 20px;
   position: relative;

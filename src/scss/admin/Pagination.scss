@@ -5,7 +5,8 @@
   align-items: center;
   cursor: pointer;
   list-style-type: none;
-  margin-top: 2rem;
+  margin-top: 1rem;
+
   li {
     border: 1px solid #015db2;
     border-radius: 5px;
@@ -13,14 +14,13 @@
     a {
       padding: 10px;
       color: #015db2;
-
-      &:hover {
-        color: #f1f1f1;
-      }
     }
+  }
+  & .active {
+    background-color: #015db2;
 
-    &:hover {
-      background-color: #333;
+    & a {
+      color: #f1f1f1;
     }
   }
 }

@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
+  margin-top: -1rem;
 
   .manage-left {
     display: flex;
@@ -20,6 +21,7 @@
 
       & label {
         color: #000000;
+        margin-bottom: 0.3rem;
       }
       & input {
         outline: none;
@@ -49,6 +51,7 @@
 
       & label {
         color: #000000;
+        margin-bottom: 0.3rem;
       }
       & input {
         outline: none;

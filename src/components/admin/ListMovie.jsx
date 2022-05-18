@@ -7,6 +7,7 @@ import {
   getData,
 } from "../../services/store/action";
 import { useNavigate } from "react-router-dom";
+import ManageMovie from "./ManageMovie";
 
 function ListMovie({ datas, currentPage, moviePerPage, setCurrentPage }) {
   const indexOfLastMovie = currentPage * moviePerPage;
@@ -61,8 +62,15 @@ function ListMovie({ datas, currentPage, moviePerPage, setCurrentPage }) {
               {/* <td>{data.movie_description}</td> */}
               <td>{data.link}</td>
               <td>
-                <button onClick={() => handleEdit(data)}>Edit</button>
-                <button onClick={() => handleDelete(data.id)}>Delete</button>
+                <button className="btn-edit" onClick={() => handleEdit(data)}>
+                  Edit
+                </button>
+                <button
+                  className="btn-delete"
+                  onClick={() => handleDelete(data.id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
