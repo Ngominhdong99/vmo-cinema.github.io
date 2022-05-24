@@ -16,3 +16,5 @@ export const UPDATE_USER = "update_user";
 export const GET_COMMENT = "get_comment";
 export const ADD_COMMENT = "add_comment";
 export const DELETE_COMMENT = "delete_comment";
+
+export const ADMIN_SEARCH = "admin_search";

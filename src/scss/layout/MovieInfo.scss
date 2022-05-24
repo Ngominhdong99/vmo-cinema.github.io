@@ -34,7 +34,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: -10.7%;
+        margin-top: -17.7%;
         background-color: rgba(0, 0, 0, 0.6);
         width: 100%;
         margin-left: auto;
@@ -46,8 +46,7 @@
           border-radius: 5px;
           border: none;
           cursor: pointer;
-          margin-left: 1rem;
-          margin-right: 1rem;
+          margin: 1rem;
         }
       }
     }
@@ -161,7 +160,7 @@
   background-color: #333;
 
   .movie-item {
-    margin: 1% 0 3% 0;
+    margin: 1% 0.5% 3% 0.5%;
 
     & img {
       width: 180px;
@@ -191,59 +190,14 @@
   .info-container {
     .info-left {
       flex-basis: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin: 6% 0 0 5%;
-
       .select-section {
-        display: flex;
-        flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
-
         img {
           width: 100%;
           height: auto;
         }
 
         & .btn-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-top: -10.7%;
-          background-color: rgba(0, 0, 0, 0.6);
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-
-          .button {
-            width: 8rem;
-            height: 3rem;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            margin-left: 1rem;
-            margin-right: 1rem;
-          }
-        }
-      }
-
-      .movie-describe {
-        & .movie-title {
-          padding: 1rem;
-          font-size: 24px;
-          color: #ff8a00;
-        }
-
-        .describe {
-          padding: 1rem;
-          line-height: 1.8rem;
-          font-size: 16px;
-
-          & .movie-rating {
-            color: #ff8a00;
-          }
+          margin-top: -20.7%;
         }
       }
     }

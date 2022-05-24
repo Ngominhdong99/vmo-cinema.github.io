@@ -62,7 +62,7 @@ function Comment({ users, currentUser, currentUserRating }) {
   };
   React.useEffect(() => {
     fetchComment();
-  }, [handleDeleteComment]);
+  }, [reload]);
 
   if (localStorage.getItem("user")) {
     return (

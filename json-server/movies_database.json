@@ -97,7 +97,7 @@
       "director": "VMO",
       "img": "/images/action-movies/drStrange-1.jpg",
       "nation": "america",
-      "duration": 123,
+      "duration": "200",
       "year": 2022,
       "category": "action",
       "status": "most_rated",
@@ -740,7 +740,7 @@
     },
     {
       "id": 42,
-      "movie_title": "Dr.Strange in the multiverse of madness",
+      "movie_title": "Dr.Strange 2",
       "number_of_chap": 1,
       "director": "VMO",
       "img": "/images/comming/drStrange2.jpg",
@@ -763,7 +763,7 @@
       "director": "VMO",
       "img": "/images/comming/kny-ss3.jpg",
       "nation": "japan",
-      "duration": 154,
+      "duration": "155",
       "year": 2022,
       "category": "anime, action",
       "status": "comming_soon",
@@ -847,18 +847,19 @@
       }
     },
     {
-      "id": 50,
-      "movie_title": "Ngay hom nay em cuoi",
+      "id": 48,
+      "movie_title": "a",
       "number_of_chap": "1",
-      "director": "",
-      "img": "https://i.ytimg.com/vi/NuWAl7-Vkwk/maxresdefault.jpg",
-      "nation": "Vietnam",
-      "duration": "3:40",
+      "director": "a",
+      "img": "a",
+      "nation": "a",
+      "duration": "120",
+      "rating": "",
       "year": "2022",
-      "status": "most_rated",
-      "category": "music",
-      "movie_description": "lofi music for your soul\n",
-      "link": "https://www.youtube.com/embed/NuWAl7-Vkwk",
+      "status": "a",
+      "category": "a",
+      "movie_description": "a",
+      "link": "a",
       "view": {
         "week": "",
         "month": ""
@@ -898,7 +899,8 @@
       "userName": "huynq",
       "password": "123",
       "role": "member",
-      "id": 5
+      "id": 5,
+      "email": "huynq@vmodev.com"
     },
     {
       "userName": "Ngô Minh Đông",
@@ -906,7 +908,8 @@
       "userImage": "https://lh3.googleusercontent.com/a/AATXAJysvMzflnfBpyXBOoKLcX3dlYchN-UBrmwQgO4p=s96-c",
       "role": "member",
       "id": "3MFGDrVzOJejINcQW9hFVKuPBNI2",
-      "rating": 1
+      "rating": 1,
+      "password": "d01100100@"
     },
     {
       "userName": "Minh Đông",
@@ -914,9 +917,25 @@
       "userImage": "https://graph.facebook.com/2843203639314007/picture",
       "role": "member",
       "id": "PQvlhhGb1fWg59fybq4duIZETNH3",
-      "password": "123",
+      "password": "d01100100@",
       "rating": 3,
       "picture": "https://graph.facebook.com/2843203639314007/picture"
+    },
+    {
+      "userName": "dongngo",
+      "password": "123",
+      "role": "member",
+      "userImage": "",
+      "id": 6,
+      "email": "minhdong20499@gmail.com"
+    },
+    {
+      "userName": "dongngo",
+      "password": "123",
+      "email": "",
+      "role": "admin",
+      "userImage": "./images/user.png",
+      "id": 7
     }
   ],
   "comment": [
@@ -1012,13 +1031,6 @@
       "id": 67
     },
     {
-      "movieId": "1",
-      "userId": 2,
-      "content": "Phim hay qua",
-      "date": "16:47:43, 13/5/2022",
-      "id": 68
-    },
-    {
       "movieId": "2",
       "userId": 2,
       "content": "Ngầu quá ! ",
@@ -1045,12 +1057,19 @@
       "content": "as",
       "date": "14:50:23, 16/5/2022",
       "id": 72
+    },
+    {
+      "movieId": "1",
+      "userId": "3MFGDrVzOJejINcQW9hFVKuPBNI2",
+      "content": "ggg",
+      "date": "09:26:52, 20/5/2022",
+      "id": 73
     }
   ],
   "rate": [
     {
       "userId": 2,
-      "rating": 4,
+      "rating": 5,
       "movieId": 1,
       "id": 1
     },
@@ -1095,6 +1114,36 @@
       "rating": 4,
       "movieId": 17,
       "id": 10
+    },
+    {
+      "userId": 1,
+      "rating": 2,
+      "movieId": 3,
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "rating": 4,
+      "movieId": 20,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "rating": 4,
+      "movieId": 1,
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "rating": 4,
+      "movieId": 45,
+      "id": 14
+    },
+    {
+      "userId": 2,
+      "rating": 4,
+      "movieId": 45,
+      "id": 15
     }
   ]
 }

@@ -10,24 +10,27 @@ import { useNavigate } from "react-router-dom";
 import ManageMovie from "./ManageMovie";
 
 function ListMovie({ datas, currentPage, moviePerPage, setCurrentPage }) {
-  const indexOfLastMovie = currentPage * moviePerPage;
-  const indexOfFirstMovie = indexOfLastMovie - moviePerPage;
-  const currentMovies = datas.slice(indexOfFirstMovie, indexOfLastMovie);
-
+  const [reload, setReload] = React.useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const indexOfLastMovie = currentPage * moviePerPage;
+  const indexOfFirstMovie = indexOfLastMovie - moviePerPage;
+  const currentMovies = Array.isArray(datas)
+    ? datas.slice(indexOfFirstMovie, indexOfLastMovie)
+    : [];
   const handleEdit = (data) => {
     dispatch(setPickedMovie(data));
     navigate("/admin/movie");
   };
   const handleDelete = (id) => {
     dispatch(deleteMovie(id));
+    setReload(!reload);
   };
 
   React.useEffect(() => {
     dispatch(getData());
-  }, [handleDelete]);
+  }, [reload]);
+
   return (
     <>
       <table className="table">
@@ -53,7 +56,9 @@ function ListMovie({ datas, currentPage, moviePerPage, setCurrentPage }) {
               <td>{data.movie_title}</td>
               <td>{data.number_of_chap}</td>
               <td>{data.director}</td>
-              <td>{data.img}</td>
+              <td id="item-image">
+                <img style={{ width: "70%", height: "100%" }} src={data.img} />
+              </td>
               <td>{data.nation}</td>
               <td>{data.duration}</td>
               <td>{data.year}</td>

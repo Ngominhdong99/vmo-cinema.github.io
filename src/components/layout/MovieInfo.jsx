@@ -4,9 +4,7 @@ import { useDispatch } from "react-redux";
 import { getItem } from "../../services/store/action";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import StarRating from "../sub-layout/StarRating";
 import { AiFillStar } from "react-icons/ai";
-import { FaStarHalfAlt } from "react-icons/fa";
 
 function MovieInfo({ datas, currentData }) {
   const [currentUserRating, setCurrentUserRating] = React.useState([]);
@@ -151,7 +149,7 @@ function MovieInfo({ datas, currentData }) {
                         <AiFillStar />
                         <AiFillStar />
                         <AiFillStar />
-                        <FaStarHalfAlt />
+                        <AiFillStar />
                       </div>
                       <p className="movie-year">{item.year}</p>
                       <p>{item.rate}</p>

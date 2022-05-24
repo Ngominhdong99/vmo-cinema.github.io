@@ -14,6 +14,7 @@ function Users({ userInput }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [error, setError] = React.useState({});
+  const [reload, setReload] = React.useState(false);
 
   const handleAddUser = (e) => {
     e.preventDefault();
@@ -36,7 +37,8 @@ function Users({ userInput }) {
   };
   const handleUpdateUser = () => {
     dispatch(updateUser(userInput));
-    navigate("/admin/list-user");
+    setReload(!reload);
+    // navigate("/admin/list-user");
     dispatch(
       setUser({
         userName: "",
@@ -60,6 +62,10 @@ function Users({ userInput }) {
       })
     );
   };
+
+  React.useEffect(() => {
+    dispatch(getUser());
+  }, [reload]);
   return (
     <>
       <FormElement>

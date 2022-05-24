@@ -1,37 +1,57 @@
 import React from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { BiLogOut } from "react-icons/bi";
+import { BiLogOut, BiSearchAlt2 } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
-import { setCurrentUser } from "../../services/store/action";
+import { setCurrentUser, adminSearch } from "../../services/store/action";
 import "../../scss/admin/Admin.scss";
 
 function Admin() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [current, setCurrent] = React.useState("list-movie");
+  const [current, setCurrent] = React.useState("data");
+  const [searchInput, setSearchInput] = React.useState("");
+
+  const fetchAdminSearch = async () => {
+    const response = await fetch(
+      `http://localhost:3000/${current}/?${
+        current === "data" ? "movie_title_like=" : "userName_like="
+      }${searchInput}`
+    );
+    const searchData = await response.json();
+    dispatch(adminSearch(searchData));
+  };
 
   React.useEffect(() => {
     navigate("list-movie");
   }, []);
+  React.useEffect(() => {
+    fetchAdminSearch();
+  }, [searchInput]);
+
+  React.useEffect(() => {
+    setSearchInput("");
+  }, [navigate]);
+
   return (
     <div className="admin-container">
       <div className="admin-menu">
         <div className="btn">
           <button
-            className={"list-movie" === current ? "active" : null}
+            className={"data" === current ? "active" : null}
             onClick={() => {
               navigate("list-movie");
-              setCurrent("list-movie");
+              setCurrent("data");
             }}
           >
             Danh sách phim
           </button>
           <button
-            className={"list-user" === current ? "active" : null}
+            className={"user" === current ? "active" : null}
             onClick={() => {
               navigate("list-user");
-              setCurrent("list-user");
+              setCurrent("user");
+              setSearchInput("a");
             }}
           >
             Danh sách thành viên
@@ -54,6 +74,17 @@ function Admin() {
           >
             Quản lý danh mục phim
           </button>
+          <div className="search-section">
+            <BiSearchAlt2 className="search-icon" />
+            <input
+              type="text"
+              value={searchInput}
+              onChange={(e) => {
+                e.preventDefault();
+                setSearchInput(e.target.value);
+              }}
+            />
+          </div>
         </div>
         <div className="icons-wrapper">
           <BiLogOut

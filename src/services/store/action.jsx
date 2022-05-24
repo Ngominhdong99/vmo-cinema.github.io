@@ -18,6 +18,7 @@ import {
   GET_COMMENT,
   ADD_COMMENT,
   DELETE_COMMENT,
+  ADMIN_SEARCH,
 } from "./Constant";
 
 const apiUser = "http://localhost:3000/user";
@@ -126,6 +127,7 @@ export const addStar = (payload) => async (dispatch) => {
 
     dispatch({
       type: ADD_STAR,
+      payload,
     });
   } catch (error) {
     console.log(error);
@@ -300,3 +302,8 @@ export const deleteComment = (payload) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const adminSearch = (payload) => ({
+  type: ADMIN_SEARCH,
+  payload,
+});

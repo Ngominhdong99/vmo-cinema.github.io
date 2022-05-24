@@ -3,9 +3,10 @@ import { deleteUser, getUser, setUser } from "../../services/store/action";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-function ListUser({ users }) {
+function ListUser({ users, datas }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [reload, setReload] = React.useState(false);
 
   const handleEditUser = (user) => {
     dispatch(setUser(user));
@@ -13,11 +14,13 @@ function ListUser({ users }) {
   };
   const handleDeleteUser = (id) => {
     dispatch(deleteUser(id));
+    setReload(!reload);
   };
 
   React.useEffect(() => {
     dispatch(getUser());
-  }, [handleDeleteUser]);
+  }, [reload]);
+
   return (
     <>
       <table className="table">
@@ -25,6 +28,7 @@ function ListUser({ users }) {
           <tr className="tr">
             <th scope="col">ID</th>
             <th scope="col">Name</th>
+            <th scope="col">Photos</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Role</th>
@@ -32,10 +36,17 @@ function ListUser({ users }) {
           </tr>
         </thead>
         <tbody id="movie">
-          {users.map((user, index) => (
+          {datas?.map((user, index) => (
             <tr key={index}>
               <td>{user.id}</td>
               <td>{user.userName}</td>
+              <td>
+                <img
+                  style={{ width: "50%", height: "100%" }}
+                  src={user.userImage}
+                  alt={user.userName}
+                />
+              </td>
               <td>{user.email}</td>
               <td>{user.password}</td>
               <td>{user.role}</td>

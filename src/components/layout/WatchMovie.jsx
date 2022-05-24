@@ -18,6 +18,7 @@ function MovieInfo() {
   React.useEffect(() => {
     dispatch(getItem(id));
   }, [id, dispatch]);
+
   return (
     <div className="movie-info-container">
       <p className="movie-link">

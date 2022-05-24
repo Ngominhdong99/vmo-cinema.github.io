@@ -1,5 +1,9 @@
 import React, { useRef } from "react";
-import { AiOutlineUser } from "react-icons/ai";
+import {
+  AiOutlineUser,
+  AiOutlineEyeInvisible,
+  AiOutlineEye,
+} from "react-icons/ai";
 import { BsKey } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
@@ -21,6 +25,7 @@ function LoginForm({ users, currentUser }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [error, setError] = React.useState({});
+  const [isHidePass, setIsHidePass] = React.useState(true);
   const inputRef = useRef();
 
   const handleLoginAcc = () => {
@@ -150,6 +155,7 @@ function LoginForm({ users, currentUser }) {
       <div>
         <AiOutlineUser className="icon" />
         <input
+          className="input"
           ref={inputRef}
           type="text"
           placeholder="Enter your Username or E-mail"
@@ -170,8 +176,8 @@ function LoginForm({ users, currentUser }) {
       <div>
         <BsKey className="icon" />
         <input
-          required
-          type="password"
+          className="input"
+          type={isHidePass ? "password" : "text"}
           placeholder="Enter your password"
           onChange={(e) => {
             setInputValue({
@@ -185,6 +191,17 @@ function LoginForm({ users, currentUser }) {
             });
           }}
         />
+        {isHidePass ? (
+          <AiOutlineEyeInvisible
+            className="eye-icon"
+            onClick={() => setIsHidePass(false)}
+          />
+        ) : (
+          <AiOutlineEye
+            className="eye-icon"
+            onClick={() => setIsHidePass(true)}
+          />
+        )}
       </div>
       <ErrorMessage>{error.password}</ErrorMessage>
       <ErrorMessage>{error.notify}</ErrorMessage>
@@ -275,7 +292,7 @@ const FormContainer = styled.form`
       font-size: 24px;
     }
 
-    & input {
+    & .input {
       margin: 0.5rem;
       height: 3rem;
       width: 25rem;
@@ -287,6 +304,14 @@ const FormContainer = styled.form`
       &::placeholder {
         color: #a1a1a1;
       }
+    }
+
+    .eye-icon {
+      margin-left: -1rem;
+      transform: translateX(-1.5rem);
+      color: black;
+      user-select: none;
+      cursor: pointer;
     }
 
     & i > a {

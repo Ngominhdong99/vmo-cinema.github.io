@@ -9,6 +9,7 @@ import {
   SET_CURRENT_USER,
   PICKED_MOVIE,
   GET_COMMENT,
+  ADMIN_SEARCH,
 } from "../store/Constant";
 
 const initState = {
@@ -105,6 +106,12 @@ const movieReducer = (state = initState, action) => {
       return {
         ...state,
         comments: action.payload,
+      };
+    // admin search
+    case ADMIN_SEARCH:
+      return {
+        ...state,
+        datas: action.payload,
       };
   }
   return state;

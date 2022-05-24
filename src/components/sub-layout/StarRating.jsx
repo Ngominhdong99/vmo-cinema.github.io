@@ -31,15 +31,16 @@ function StarRating({ params }) {
 
   // console.log(currentUserRating);
 
-  const handleSetRating = () => {
+  const handleSetRating = (ratingValue) => {
     if (JSON.parse(localStorage.getItem("rate")).length > 0) {
+      console.log("gg");
       dispatch(setStar(currentUserRating));
       localStorage.setItem("rate", JSON.stringify(currentUserRating));
     } else if (JSON.parse(localStorage.getItem("rate")).length === 0) {
       dispatch(
         addStar({
           userId: JSON.parse(localStorage.getItem("user")).id,
-          rating: Number(rate),
+          rating: Number(ratingValue),
           movieId: Number(params.id),
         })
       );
@@ -80,7 +81,7 @@ function StarRating({ params }) {
               value={ratingValue}
               onClick={() => {
                 setRate(ratingValue);
-                handleSetRating();
+                handleSetRating(ratingValue);
                 // localStorage.setItem("rate", JSON.stringify(currentUserRating));
               }}
             />

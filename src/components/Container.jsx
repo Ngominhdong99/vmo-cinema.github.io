@@ -26,7 +26,7 @@ function Container() {
   // pagination admin
   const [currentPage, setCurrentPage] = React.useState(1);
   const [moviePerPage] = React.useState(7);
-  //
+  const [light, setLight] = React.useState(false);
 
   const {
     datas,
@@ -37,6 +37,7 @@ function Container() {
     pickedMovie,
     userInput,
     currentUserRating,
+    adminSearchData,
   } = state;
 
   React.useEffect(() => {
@@ -83,7 +84,10 @@ function Container() {
               />
             }
           ></Route>
-          <Route path="list-user" element={<ListUser users={users} />}></Route>
+          <Route
+            path="list-user"
+            element={<ListUser users={users} datas={datas} />}
+          ></Route>
           <Route path="users" element={<Users userInput={userInput} />}></Route>
           <Route
             path="movie"
@@ -122,15 +126,20 @@ function Container() {
           path="watch-movie/:id"
           element={
             <>
-              <MovieHeader />
-              {/* <Header datas={datas} currentUser={currentUser} /> */}
-              <WatchMovie />
-              <Comment
-                users={users}
-                currentUser={currentUser}
-                currentUserRating={currentUserRating}
-              />
-              <Footer />
+              {light ? (
+                <WatchMovie />
+              ) : (
+                <>
+                  <MovieHeader />
+                  <WatchMovie />
+                  <Comment
+                    users={users}
+                    currentUser={currentUser}
+                    currentUserRating={currentUserRating}
+                  />
+                  <Footer />
+                </>
+              )}
             </>
           }
         ></Route>
