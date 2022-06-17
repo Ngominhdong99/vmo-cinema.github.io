@@ -18,6 +18,8 @@ import ListMovie from "./admin/ListMovie";
 import ListUser from "./admin/ListUser";
 import Users from "./admin/Users";
 import ManageMovie from "./admin/ManageMovie";
+import UserInfo from "./sub-layout/UserInfo";
+import ChangePassword from "./sub-layout/ChangePassword";
 
 function Container() {
   const state = useSelector((state) => state.form);
@@ -126,20 +128,16 @@ function Container() {
           path="watch-movie/:id"
           element={
             <>
-              {light ? (
-                <WatchMovie />
-              ) : (
-                <>
-                  <MovieHeader />
-                  <WatchMovie />
-                  <Comment
-                    users={users}
-                    currentUser={currentUser}
-                    currentUserRating={currentUserRating}
-                  />
-                  <Footer />
-                </>
-              )}
+              <>
+                <MovieHeader />
+                <WatchMovie light={light} setLight={setLight} />
+                <Comment
+                  users={users}
+                  currentUser={currentUser}
+                  currentUserRating={currentUserRating}
+                />
+                <Footer />
+              </>
             </>
           }
         ></Route>
@@ -155,6 +153,26 @@ function Container() {
             </>
           }
         ></Route>
+        <Route
+          path="user-info"
+          element={
+            <>
+              <MovieHeader />
+              <UserInfo />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="change-password"
+          element={
+            <>
+              <MovieHeader />
+              <ChangePassword />
+              <Footer />
+            </>
+          }
+        />
       </Routes>
     </div>
   );

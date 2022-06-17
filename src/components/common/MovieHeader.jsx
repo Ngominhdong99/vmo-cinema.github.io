@@ -1,15 +1,19 @@
 import React, { useState, useRef } from "react";
 import "../../scss/common/MovieHeader.scss";
-import { BiSearchAlt2, BiLogOut } from "react-icons/bi";
-import { AiOutlineMenu } from "react-icons/ai";
-import { BsXLg } from "react-icons/bs";
-import { FaUserCircle } from "react-icons/fa";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { setSearchData } from "../../services/store/action";
 import { useDispatch } from "react-redux";
 import queryString from "query-string";
 import { setCurrentUser } from "../../services/store/action";
 import { auth } from "../../Firebase/config";
+import useDebounce from "../../hooks/useDebounce";
+
+import { BiSearchAlt2, BiLogOut } from "react-icons/bi";
+import { AiOutlineMenu } from "react-icons/ai";
+import { BsXLg } from "react-icons/bs";
+import { TiDelete } from "react-icons/ti";
+import { BsArrowReturnRight } from "react-icons/bs";
+import Tippy from "@tippyjs/react/headless";
 
 function MovieHeader({}) {
   const [inputSearch, setInputSeach] = useState({
@@ -18,12 +22,17 @@ function MovieHeader({}) {
     nation_like: "",
     status_like: "",
   });
+  const [dataMovie, setDataMovie] = useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [mobileMenu, setMobieMenu] = React.useState(false);
-  const headerRef = useRef();
+  const [showResult, setShowResult] = React.useState(true);
+  const debounce = useDebounce(inputSearch.movie_title_like, 800);
 
-  const fetchSearch = async () => {
+  const headerRef = useRef();
+  const inputRef = useRef();
+
+  const fetchFilter = async () => {
     const paramsString = queryString.stringify(inputSearch, {
       skipEmptyString: true,
     });
@@ -32,9 +41,33 @@ function MovieHeader({}) {
     dispatch(setSearchData(searchData));
   };
 
-  const handleSearch = () => {
+  React.useEffect(() => {
+    if (!inputSearch.movie_title_like.trim()) {
+      setDataMovie([]);
+      return;
+    }
+
+    const fetchSearch = async () => {
+      const response = await fetch(
+        `http://localhost:3000/data/?movie_title_like=${debounce}`
+      );
+      const data = await response.json();
+      setDataMovie(data);
+    };
     fetchSearch();
-    navigate("/filter-movie");
+  }, [debounce]);
+
+  const handleDeleteSearch = () => {
+    setInputSeach({
+      ...inputSearch,
+      movie_title_like: "",
+    });
+    setDataMovie([]);
+    inputRef.current.focus();
+  };
+
+  const handleHideResult = () => {
+    setShowResult(false);
   };
 
   const onChangeFilter = (key, value) => {
@@ -49,7 +82,7 @@ function MovieHeader({}) {
   };
 
   React.useEffect(() => {
-    fetchSearch();
+    fetchFilter();
   }, [inputSearch]);
 
   React.useEffect(() => {
@@ -67,27 +100,55 @@ function MovieHeader({}) {
           onClick={() => navigate("/")}
         />
         <div className="navbar-container">
-          <div className="search-section">
-            <BiSearchAlt2 className="search-icon" />
-            <input
-              type="search"
-              placeholder="Search"
-              value={inputSearch.movie_title_like}
-              onChange={(e) => {
-                handleSearch();
-                setInputSeach({
-                  ...inputSearch,
-                  movie_title_like: e.target.value,
-                });
-              }}
-              // onMouseLeave={() =>
-              //   setInputSeach({
-              //     ...inputSearch,
-              //     movie_title_like: "",
-              //   })
-              // }
-            />
-          </div>
+          <Tippy
+            placement="bottom"
+            interactive
+            visible={showResult && dataMovie.length > 0}
+            onClickOutside={handleHideResult}
+            render={(attrs) => (
+              <div tabIndex="-1" {...attrs} className="search-result">
+                <ul>
+                  {dataMovie.map((item, index) => (
+                    <div
+                      key={index}
+                      className="result-item"
+                      onClick={() => {
+                        navigate(`/movie-info/${item.id}`);
+                        handleDeleteSearch();
+                      }}
+                    >
+                      <BsArrowReturnRight color="#333" />
+                      <li key={index}>{item.movie_title}</li>
+                    </div>
+                  ))}
+                </ul>
+              </div>
+            )}
+          >
+            <div className="search-section">
+              <BiSearchAlt2 className="search-icon" />
+              <input
+                ref={inputRef}
+                type="text"
+                placeholder="Search"
+                value={inputSearch.movie_title_like}
+                onFocus={() => setShowResult(true)}
+                onChange={(e) => {
+                  setInputSeach({
+                    ...inputSearch,
+                    movie_title_like: e.target.value,
+                  });
+                }}
+              />
+              {!!inputSearch.movie_title_like && (
+                <TiDelete
+                  className="delete-icon"
+                  onClick={() => handleDeleteSearch()}
+                />
+              )}
+            </div>
+          </Tippy>
+
           <div className="navbar-section">
             <div className="drop-menu">
               <a href="/">Thể loại</a>
@@ -207,7 +268,12 @@ function MovieHeader({}) {
                       Admin page
                     </li>
                   ) : (
-                    ""
+                    <li
+                      className="admin"
+                      onClick={() => navigate("/user-info")}
+                    >
+                      Hồ sơ
+                    </li>
                   )}
                 </ul>
               ) : (

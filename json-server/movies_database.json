@@ -845,25 +845,6 @@
         "week": 1355,
         "month": 5434
       }
-    },
-    {
-      "id": 48,
-      "movie_title": "a",
-      "number_of_chap": "1",
-      "director": "a",
-      "img": "a",
-      "nation": "a",
-      "duration": "120",
-      "rating": "",
-      "year": "2022",
-      "status": "a",
-      "category": "a",
-      "movie_description": "a",
-      "link": "a",
-      "view": {
-        "week": "",
-        "month": ""
-      }
     }
   ],
   "user": [
@@ -920,22 +901,6 @@
       "password": "d01100100@",
       "rating": 3,
       "picture": "https://graph.facebook.com/2843203639314007/picture"
-    },
-    {
-      "userName": "dongngo",
-      "password": "123",
-      "role": "member",
-      "userImage": "",
-      "id": 6,
-      "email": "minhdong20499@gmail.com"
-    },
-    {
-      "userName": "dongngo",
-      "password": "123",
-      "email": "",
-      "role": "admin",
-      "userImage": "./images/user.png",
-      "id": 7
     }
   ],
   "comment": [
@@ -1064,6 +1029,13 @@
       "content": "ggg",
       "date": "09:26:52, 20/5/2022",
       "id": 73
+    },
+    {
+      "movieId": "13",
+      "userId": 2,
+      "content": "wow",
+      "date": "16:22:54, 31/5/2022",
+      "id": 74
     }
   ],
   "rate": [
