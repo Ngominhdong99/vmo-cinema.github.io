@@ -60,9 +60,11 @@ function LoginForm({ users, currentUser }) {
         person.userName !== inputValue.userName ||
         person.password !== inputValue.password
       ) {
-        error.notify = "Tài khoản hoặc mật khẩu không đúng!";
+        setError({
+          ...error,
+          notify: "Tài khoản hoặc mật khẩu không đúng!",
+        });
       }
-      return error;
     });
   };
 
@@ -145,6 +147,7 @@ function LoginForm({ users, currentUser }) {
 
   React.useEffect(() => {
     inputRef.current.focus();
+    dispatch(getUser());
   }, []);
 
   return (
@@ -221,7 +224,6 @@ function LoginForm({ users, currentUser }) {
         className="button"
         onClick={(e) => {
           e.preventDefault();
-          dispatch(getUser());
           handleLoginAcc();
         }}
       >

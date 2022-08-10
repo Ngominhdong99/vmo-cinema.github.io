@@ -126,7 +126,7 @@ function MovieInfo({ datas, currentData }) {
             {datas.map((item, index) => {
               if (item.status === "comming_soon") {
                 return (
-                  <div key={index} className="sidebar-item">
+                  <div key={item.id + index} className="sidebar-item">
                     <img
                       src={item.img}
                       alt={item.movie_title}
@@ -172,7 +172,7 @@ function MovieInfo({ datas, currentData }) {
             return (
               <div
                 className="movie-item"
-                key={index}
+                key={"move-item" + item.id}
                 onClick={() => {
                   navigate(`/movie-info/${item.id}`);
                 }}

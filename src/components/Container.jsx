@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getData, getUser, setCurrentUser } from "../services/store/action";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Header from "./common/Header";
+// import Header from "./common/Header";
 import MovieHeader from "./common/MovieHeader";
 import Slider from "./layout/Slider";
 import HomeMovies from "./layout/HomeMovies";

@@ -975,20 +975,6 @@
       "id": 21
     },
     {
-      "movieId": "3",
-      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
-      "content": "gggg",
-      "date": "23:45:49, 11/5/2022",
-      "id": 23
-    },
-    {
-      "movieId": "3",
-      "userId": "PQvlhhGb1fWg59fybq4duIZETNH3",
-      "content": "this is a test value",
-      "date": "00:21:57, 12/5/2022",
-      "id": 24
-    },
-    {
       "movieId": "34",
       "userId": 2,
       "content": "Thứ tình cảm vớ vẩn ! -.-",
@@ -1116,6 +1102,24 @@
       "rating": 4,
       "movieId": 45,
       "id": 15
+    },
+    {
+      "userId": 4,
+      "rating": 4,
+      "movieId": 3,
+      "id": 16
+    },
+    {
+      "userId": 2,
+      "rating": 5,
+      "movieId": 3,
+      "id": 17
+    },
+    {
+      "userId": "3MFGDrVzOJejINcQW9hFVKuPBNI2",
+      "rating": 4,
+      "movieId": 3,
+      "id": 18
     }
   ]
 }

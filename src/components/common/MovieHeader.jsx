@@ -28,6 +28,10 @@ function MovieHeader({}) {
   const [mobileMenu, setMobieMenu] = React.useState(false);
   const [showResult, setShowResult] = React.useState(true);
   const debounce = useDebounce(inputSearch.movie_title_like, 800);
+  const [windowDimesion, detectHW] = useState({
+    winWidth: window.innerWidth,
+    // winHeight: window.innerHeight,
+  });
 
   const headerRef = useRef();
   const inputRef = useRef();
@@ -90,6 +94,24 @@ function MovieHeader({}) {
       setMobieMenu(false);
     });
   }, [mobileMenu]);
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      // winHeight: window.innerHeight,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", detectSize);
+    if (windowDimesion.winWidth > 1300) {
+      setMobieMenu(false);
+    }
+
+    return () => {
+      window.removeEventListener("resize", detectSize);
+    };
+  }, [windowDimesion]);
 
   return (
     <>

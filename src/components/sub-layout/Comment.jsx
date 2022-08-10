@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useDispatch } from "react-redux";
 import "../../scss/sub-layout/Comment.scss";
 import { useParams, Link } from "react-router-dom";
@@ -19,7 +19,6 @@ function Comment({ users, currentUser, currentUserRating }) {
     movieId: null,
     content: "",
   });
-
   const fetchComment = async () => {
     try {
       const response = await fetch(
@@ -31,10 +30,10 @@ function Comment({ users, currentUser, currentUserRating }) {
       throw new Error(error);
     }
   };
+
   const handleSendComment = (e) => {
     e.preventDefault();
-    setReload(!reload);
-    if (localStorage.getItem("user")) {
+    if (commentInput.content) {
       dispatch(
         addComment({
           ...commentInput,
@@ -49,9 +48,8 @@ function Comment({ users, currentUser, currentUserRating }) {
         movieId: null,
         content: "",
       });
-    } else {
-      alert("Vui long dang nhap de binh luan");
     }
+    setReload(!reload);
   };
 
   const handleDeleteComment = (id) => {
@@ -63,7 +61,7 @@ function Comment({ users, currentUser, currentUserRating }) {
   React.useEffect(() => {
     fetchComment();
   }, [reload]);
-
+  console.log(reload);
   if (localStorage.getItem("user")) {
     return (
       <div className="comment-container">
@@ -102,18 +100,23 @@ function Comment({ users, currentUser, currentUserRating }) {
               })
             }
           />
-          <button onClick={(e) => handleSendComment(e)}>Gửi bình luận</button>
+          <button
+            className={commentInput.content.trim() !== "" ? "" : "inactive"}
+            onClick={(e) => handleSendComment(e)}
+          >
+            Gửi bình luận
+          </button>
         </form>
         <div className={filterComment}>
           {movieComment.map((item, index) => {
             return (
-              <div className="comment-item" key={index}>
+              <div className="comment-item" key={item.id + index}>
                 <img src="/images/user.png" alt="user" />
                 <div className="content">
                   {users.map((user, index) => {
                     if (user.id === item.userId) {
                       return (
-                        <div key={index} className="name-date">
+                        <div key={item.id} className="name-date">
                           <h3>{user.userName}</h3>
                           <span>at: {item.date}</span>
                         </div>
@@ -189,4 +192,4 @@ const H1Element = styled.h1`
   font-family: "roboto";
 `;
 
-export default Comment;
+export default memo(Comment);

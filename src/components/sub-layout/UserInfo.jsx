@@ -17,7 +17,7 @@ function UserInfo() {
   return (
     <DivElement>
       <div className="image-section">
-        <img src={user?.userImage} alt={user?.userName} />
+        <img src={user?.picture || user.userImage} alt={user?.userName} />
         <p>{user.userName.toUpperCase()}</p>
         <input type="file" />
       </div>

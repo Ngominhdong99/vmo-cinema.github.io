@@ -48,19 +48,10 @@ function StarRating({ params }) {
     }
   };
   React.useEffect(() => {
-    // if (currentUserRating.length > 0) {
-    //   currentUserRating.map((curRate) => {
-    //     setCurrentUserRating({
-    //       ...curRate,
-    //       rating: rate,
-    //     });
-    //   });
-    // } else {
     setCurrentUserRating({
       ...currentUserRating[0],
       rating: rate,
     });
-    // }
   }, [rate]);
 
   React.useEffect(() => {

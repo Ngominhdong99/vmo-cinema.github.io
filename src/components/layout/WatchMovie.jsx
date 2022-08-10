@@ -82,7 +82,7 @@ function MovieInfo({ light, setLight }) {
           <div className="movie-suggestion">
             <p className="suggestion-title">Có thể bạn sẽ thích</p>
             <div className="suggest-movie">
-              {datas.map((item) => {
+              {datas.map((item, index) => {
                 if (
                   item.category.includes(currentData.category) &&
                   item.rating === currentData.rating &&
@@ -91,6 +91,7 @@ function MovieInfo({ light, setLight }) {
                 ) {
                   return (
                     <div
+                      key={index}
                       className="suggest-movie-item"
                       onClick={() => {
                         navigate(`/movie-info/${item.id}`);

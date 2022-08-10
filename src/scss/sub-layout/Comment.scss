@@ -46,6 +46,12 @@
       border-radius: 0.5rem;
       cursor: pointer;
     }
+    & .inactive {
+      pointer-events: none;
+      color: #3f3e3e;
+      background-color: rgb(187, 187, 187);
+      transition: all 0.3s linear;
+    }
   }
 
   & .reverse {

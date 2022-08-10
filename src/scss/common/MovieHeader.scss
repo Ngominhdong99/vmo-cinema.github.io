@@ -225,6 +225,7 @@ header {
   z-index: 1;
   width: 50%;
   height: 100vh;
+  z-index: 999;
 
   & ul {
     display: flex;

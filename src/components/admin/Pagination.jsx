@@ -31,15 +31,3 @@ const Pagination = ({ datas, moviePerPage, setCurrentPage }) => {
 };
 
 export default Pagination;
-
-// {
-//   new Array(numberOfButton).fill("").map((el, index) => {
-//     return (
-//       <li class={`page-item ${index + 1 === counter ? "active" : null}`}>
-//         <a class="page-link" href="#" onClick={() => setCounter(index + 1)}>
-//           {index + 1}
-//         </a>
-//       </li>
-//     );
-//   });
-// }
